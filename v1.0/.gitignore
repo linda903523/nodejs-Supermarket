@@ -1,0 +1,11 @@
+﻿#过滤nodejs的模块
+node_modules/
+
+#过滤压缩文件
+*.zip
+
+#过滤单个文件
+test.txt
+
+#过滤文件夹
+doc/
