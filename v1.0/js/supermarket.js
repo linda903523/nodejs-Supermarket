@@ -68,28 +68,26 @@ jQuery(function($){
     
     function asd(){
         $.post("http://localhost:12/create",{},function(response){
-            response=JSON.parse(response);
-            listsql=response.data;
-            var listsql=JSON.parse(listsql);
+            listsql = response.data;
             // console.log(typeof listsql);
             var th=$.map(listsql,function(item){
                 return `<tr>
                     <td><input type="checkbox" name="check"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
-                    <td><input type="text" class="input3" value="${item.bianhao}"/></td>
+                    <td><input type="text" class="input3" value="${item.id}"/></td>
                     <td><input type="text" class="input4" value="${item.img}"/></td>
                     <td><input type="text" class="input5" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
-                    <td><input type="text" class="input8" value="${item. bianhao}"/></td>
+                    <td><input type="text" class="input8" value="${item.bianhao}"/></td>
                     <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
-                    <td><button>删除</button></td>
+                    <td><input type="button" value="删除" class="btnDel"/></td>
                 </tr>`
             }).join('');
             // console.log(th);
             $('tbody')[0].innerHTML = '';
-                // console.log($('tbody'));
+            // console.log($('tbody'));
             $('tbody').eq(0).html(th)
             if(response.status){
                 // alert('注册成功');
@@ -98,6 +96,25 @@ jQuery(function($){
             } else {
                 alert(response.message);
             }
+            $('.btnDel').each(function(i){
+                $(this).click(function(){
+                    var a=$(this).parent().parent().children();
+                    $(this).parent().parent().remove();
+                    var va1=a[1].firstChild.value;
+                    var va2=a[2].firstChild.value;
+                    var va3=a[3].firstChild.value;
+                    var va4=a[4].firstChild.value;
+                    var va5=a[5].firstChild.value;
+                    var va6=a[6].firstChild.value;
+                    var va7=a[7].firstChild.value;
+                    var va8=a[8].firstChild.value;
+                    console.log({name:va1,tiaoma:va2,id:va3,img:va4,dizhi:va5,number:va6,shoujia:va7,bianhao:va8})
+                    $.post("http://localhost:12/shan",{name:va1,tiaoma:va2,bianhao:va3,img:va4,dizhi:va5,number:va6,shoujia:va7,bianhao:va8},function(response){
+                        // console.log(99);
+                        console.log(response);
+                    })                   
+                })
+             })
         })
     }
 
