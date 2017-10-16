@@ -5,7 +5,7 @@
 .register{position:absolute; top:0px; right:60px;}
 .register span{float:left; font-size:16px; padding:0 15px; line-height:30px; color:#fff;}
 
-.nav{position:relative; }
+.nav{position:relative; margin-top:20px;}
 .nav h3{background-color:#196EC4; padding-left:50px; border-radius:5px 5px; box-shadow:0px 4px 7px -4px inset; line-height:30px;}
 .nav span{position:absolute; right:0px; top:-8px; font-size:30px;}
 .nav span:hover{color:#f15c18; cursor:pointer;}
@@ -16,7 +16,7 @@
 .manage ul li a{height:50px; color:#fff; line-height:50px; text-align:center; background-color:#6071B6; }
 .manage ul li a:hover{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
 
-.detail{float:left; padding-left:20px;width:1000px; /*display:none;*/}
+.detail{float:left; padding-left:20px;width:1000px; display:none;}
 .product_detail{padding-top:10px;}
 .product_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 
@@ -39,8 +39,9 @@
 .page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
 .page>a:hover{border:1px solid #f15c18; color:#f15C18; text-decoration:none;}
 
-.login{border:1px solid #ddd; width:400px; height:400px; position:absolute; top:150px; left:500px; display:none;}
+.login{border:1px solid #ddd; width:400px; height:250px; position:absolute; top:150px; left:500px;}
 .login h3{background-color:skyblue; line-height:50px;}
 .login h3 i{padding:0 10px; color:yellow;}
 .login_input p{padding:20px 0 0 80px;}
-.login_input button{margin:30px 0 0 120px;padding:10px 20px;}
+.login_input #btnLogin{margin:30px 0 0 120px;}
+.login_input #btnExit{margin:30px 0 0 20px;}

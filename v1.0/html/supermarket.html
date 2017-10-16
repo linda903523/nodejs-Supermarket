@@ -13,11 +13,9 @@
         <div class="head">
             <h1>皇冠超市管理系统</h1>
             <div class="register">
-                <span>注册</span>
-                <span>登录</span>
-                <span>退出</span>
+                <span id="login">登录</span>
+                <span id="exit">退出</span>
             </div>
-            <span>&times;</span>
         </div>
     </div>
     <div id="main">
@@ -26,8 +24,7 @@
             <span>&times;</span>
         </div>
         <div class="manage">
-            <ul>
-                
+            <ul>                
                 <li class="product">
                     <a href="javascript:;">产品管理</a>
                 </li>
@@ -67,8 +64,8 @@
             <div class="product_detail">
                 <h3>商品库明细表</h3>
                 <div class="seek">
-                    <input type="text" placeholder="请输入搜索的商品名称" />
-                    <a href="javascript:;">搜索</a>
+                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo"/>
+                    <a href="javascript:;" id="shou">搜索</a>
                 </div>
                 <div class="table_th">
                   <table class="table table-bordered table-striped ">
@@ -77,7 +74,7 @@
                             <th>#</th>
                             <th>商品名称</th>
                             <th>商品条码</th>
-                            <th>商品编号</th>
+                            <th>商品编号(id)</th>
                             <th>商品图片</th>
                             <th>厂商地址</th>
                             <th>库存数量</th>
@@ -88,146 +85,6 @@
                         </tr>
                     </thead>
                     <tbody></tbody>
-                    <!-- <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>矿泉水</td>
-                        <td>22123132</td>
-                        <td>1</td>
-                        <td></td>
-                        <td>广州白云区</td>
-                        <td>100</td>
-                        <td>2元</td>
-                        <td>3</td>
-                        <td class="Meter"><meter min="1" max="100" value="10" low="30"
-                        hight="80" optimun="90"></meter><button>采购</button></td>
-                        <td><button>删除</button></td>
-                    </tr> -->
                   </table>
                 </div>
                 <div class="added">
@@ -236,7 +93,7 @@
                             <th>#</th>
                             <th>商品名称</th>
                             <th>商品条码</th>
-                            <th>商品编号</th>
+                            <th>商品编号(id)</th>
                             <th>商品图片</th>
                             <th>厂商地址</th>
                             <th>库存数量</th>
@@ -247,14 +104,14 @@
                         </tr>
                         <tr id="input_ss">
                             <td><input type="checkbox" name="check"></td>
-                            <td><input type="text" id="input1"/></td>
-                            <td><input type="text" id="input2"/></td>
-                            <td><input type="text" id="input3"/></td>
-                            <td><input type="text" id="input4"/></td>
-                            <td><input type="text" id="input5"/></td>
-                            <td><input type="text" id="input6"/></td>
-                            <td><input type="text" id="input7"/></td>
-                            <td><input type="text" id="input8"/></td>
+                            <td><input type="text" class="input1"/></td>
+                            <td><input type="text" class="input2"/></td>
+                            <td><input type="text" class="input3"/></td>
+                            <td><input type="text" class="input4"/></td>
+                            <td><input type="text" class="input5"/></td>
+                            <td><input type="text" class="input6"/></td>
+                            <td><input type="text" class="input7"/></td>
+                            <td><input type="text" class="input8"/></td>
                             <td class="Meter"></td>
                             <td><span id="app">添加</span></td>
                         </tr>
@@ -274,14 +131,13 @@
         <div class="login">
             <h3><i class="glyphicon glyphicon-queen"></i>超市管理登录</h3>
             <div class="login_input">
-                <p>帐号：<input type="text" /></p>
-                <p>密码：<input type="password" /></p>
-                <button>登录</button>
+                <p>帐号：<input type="text" id="username" /></p>
+                <p>密码：<input type="password" id="password" /></p>
+                <input type="button" value="登录" id="btnLogin">
+                <input type="button" value="取消" id="btnExit">
             </div>
         </div>
     </div>
-    <div id="footer"></div>
-    <script src="../js/supermarket.js">
-    </script>
+    <script src="../js/supermarket.js"></script>
 </body>
 </html>
