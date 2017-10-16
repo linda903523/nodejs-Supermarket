@@ -29,16 +29,16 @@ jQuery(function($){
             shoujia:$('#input_ss #input7').val(),
             bianhao:$('#input_ss #input8').val(),
         },function(response){
-             console.log(response);
-             response=JSON.parse(response);
+            console.log(response);
+            response=JSON.parse(response);
              console.log(response.status);
             if(response.status){
-                    alert('添加成功');
-                    asd();
-                    // window.location.href = 'login.html';
-                } else {
-                    alert(response.message);
-                }
+                alert('添加成功');
+                asd();
+                // window.location.href = 'login.html';
+            } else {
+                alert(response.message);
+            }
         })
     })
     //zxxxxxxxxxxxxxxxxxxxxxxxxxxxx

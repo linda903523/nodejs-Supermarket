@@ -63,16 +63,16 @@ var obj={
                 _callback(apiResult(false,null,error));
                 return false;
                 }
-                db.collection(_collection).find().toArray(function(err, docs) {
+                db.collection(_collection).find(_data || {}).toArray(function(err, docs) {
                     // console.log(typeof docs);
                     if(err){
                         _callback(apiResult(false,null,error));
                         return false;
-                    }
-                    
-                    else{
-                        // console.log(JSON.stringify(docs));
+                    }else if(docs.length!=0){
                         _callback(apiResult(true,JSON.stringify(docs)));
+                         // _callback({status: true, data: docs})
+                         db.close();
+                    }else{
                         console.log(_data);
                         collection.insert(_data);
                         db.close();
