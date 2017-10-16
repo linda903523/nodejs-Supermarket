@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>       
+        body{padding:50px;}
+        .datalist{border:1px solid #ccc;width:100%;border-collapse: collapse;}
+        .datalist td,.datalist th{border:1px solid #ccc;padding:0;}
+        /*  .datalist tr.even{background-color:#efefef;}
+        .datalist tr.selected{background-color:#fc0;color:#fff;}*/
+       
+        #shousuo{margin-right:20px;}
+        table{margin-bottom:20px;}
+        thead th{font-size:14px;}
+        .datalist thead th:last-child{width:100px;}
+        .datalist input{border-style:none;width:80px;height:18px;padding:0;outline:none;text-align:center;}
+        /*.datalist tr:nth-child(even){background-color:#efefef;}*/
+    </style>
+    <script src="../lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <p><input type="text" id="shousuo"><button id="shou">搜索</button></p>
+        <table  class="datalist">
+            <thead>
+                 <tr>
+                    <th >选择</th>
+                    <th>商品名称</th>
+                    <th>商品条码</th>
+                    <th>商品编号</th>
+                    <th>商品图片</th>
+                    <th>厂家地址</th>
+                    <th>库存数量</th>
+                    <th>零售价（元）</th>
+                    <th>货架编号</th>
+                    <th>采购</th>
+                    <th>删除</th>
+                </tr>
+            </thead>
+            <tbody>              
+               <!--  <td><input type="checkbox" name="check"></td>
+               <td><input type="text" id="input1" /></td>
+               <td><input type="text" id="input2" /></td>
+               <td><input type="text" id="input3" /></td>
+               <td><input type="text" id="input4" /></td>
+               <td><input type="text" id="input5" /></td>
+               <td><input type="text" id="input6" /></td>
+               <td><input type="text" id="input7" /></td>
+               <td><input type="text" id="input8" /></td>
+               <td><input type="text" id="input9" /></td> -->            
+            </tbody>
+        </table>
+        <button id="btn">增加商品</button>
+    </div>
+    <script>
+        jQuery(function($){
+            var $tr=$('tbody').find('tr');
+            $('table').on('click','button',function(){
+                    $(this).parent().parent().remove();
+            })
+
+            $.post("http://localhost:12/create",{},function(response){
+                response=JSON.parse(response);
+                listsql=response.data;
+                var listsql=JSON.parse(listsql);
+                //console.log(typeof listsql);
+                var th=$.map(listsql,function(item){
+                    return `<tr>
+                        <td><input type="checkbox" name="check"></td>
+                        <td><input type="text" class="input1" value="${item.name}"/></td>
+                        <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
+                        <td><input type="text" class="input3" value="${item.bianhao}"/></td>
+                        <td><input type="text" class="input4" value="${item.img}"/></td>
+                        <td><input type="text" class="input5" value="${item.dizhi}"/></td>
+                        <td><input type="text" class="input6" value="${item.number}"/></td>
+                        <td><input type="text" class="input7" value="${item.shoujia}"/></td>
+                        <td><input type="text" class="input8" value="${item. bianhao}"/></td>
+                        <td><input type="text" class="input9" value=""/></td>
+                        <td><input type="button" class="input10" value="&times"/></td>
+                    </tr>`
+                }).join('');
+                //console.log(th);
+                $('tbody')[0].innerHTML = '';
+                $('tbody').html(th);
+                if(response.status){
+                    // alert('注册成功');
+                    // response.write(response.data);
+                    // window.location.href = 'login.html';
+                } else {
+                    alert(response.message);
+                }
+            })       
+        })
+     </script>
+</body>
+</html>

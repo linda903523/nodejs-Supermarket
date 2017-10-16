@@ -68,9 +68,9 @@ jQuery(function($){
     
     function asd(){
         $.post("http://localhost:12/create",{},function(response){
-            response = JSON.parse(response);
-            listsql = response.data;
-            var listsql = JSON.parse(listsql);
+            response=JSON.parse(response);
+            listsql=response.data;
+            var listsql=JSON.parse(listsql);
             // console.log(typeof listsql);
             var th=$.map(listsql,function(item){
                 return `<tr>
@@ -98,6 +98,25 @@ jQuery(function($){
             } else {
                 alert(response.message);
             }
+            /*$('.btnDel').each(function(i){
+                $(this).click(function(){
+                    var a=$(this).parent().parent().children();
+                    $(this).parent().parent().remove();
+                    var va1=a[1].firstChild.value;
+                    var va2=a[2].firstChild.value;
+                    var va3=a[3].firstChild.value;
+                    var va4=a[4].firstChild.value;
+                    var va5=a[5].firstChild.value;
+                    var va6=a[6].firstChild.value;
+                    var va7=a[7].firstChild.value;
+                    var va8=a[8].firstChild.value;
+                    console.log({name:va1,tiaoma:va2,id:va3,img:va4,dizhi:va5,number:va6,shoujia:va7,bianhao:va8})
+                    $.post("http://localhost:12/shan",{name:va1,tiaoma:va2,bianhao:va3,img:va4,dizhi:va5,number:va6,shoujia:va7,bianhao:va8},function(response){
+                        // console.log(99);
+                        console.log(response);
+                    })                   
+                })
+             })*/
         })
     }
 

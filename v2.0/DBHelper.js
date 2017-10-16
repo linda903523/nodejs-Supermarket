@@ -3,7 +3,7 @@ var mongodb=require('mongodb');
 var dbServer=new mongodb.Server('10.3.131.10',27017);
 var db = new mongodb.Db('cuicui', dbServer);
 
-var obj = {
+module.exports = {
     insert:function(_collection,_data,_callback){
         db.open(function(error,db){
             if(error){
@@ -24,34 +24,29 @@ var obj = {
         })
     },
     select:function(_collection,_condition,_callback){
-        db.open(function(error,db){
+        db.open(function(error, db){
             if(error){
                 _callback(apiResult(false,null,error));
                 return false;
-            }
-            db.collection(_collection,function(error,collection){
-                if(error){
-                    _callback(apiResult(false,null,error));
-                    return false;
-                }
-                db.collection(_collection).find(_condition||{}).toArray(function(err, docs) {
-                    // console.log(_condition);
-                    // console.log(typeof docs);
-                    if(err){
+            } else {
+                db.collection(_collection, function(error, collection){
+                    if(error){
                         _callback(apiResult(false,null,error));
                         return false;
-                    }
-                    else if(docs.length!=0){
-                        _callback(apiResult(true,JSON.stringify(docs)));
-                         // _callback({status: true, data: docs})
-                        db.close();
+                    } else {
+                        collection.find(_condition || {}).toArray(function(error, dataset){
+                            if(error){
+                                _callback(apiResult(false,null,error));
+                                return false;
+                            } else {
+                                _callback(apiResult(true));
+                            }
+                        })
 
-                    }else{
-                        collection.insert(_condition);
-                        db.close();
                     }
-                });
-            })
+                    db.close();
+                })
+            }
         })
     },
     add:function(_collection,_data,_callback){
@@ -104,4 +99,3 @@ var obj = {
         })
     }
 }
-module.exports = obj;

@@ -1,24 +1,17 @@
 var db = require('../DBHelper.js');
-var bodyparser = require('body-parser');
-var urlencode = bodyparser.urlencoded({extended: false});
 
-module.exports = {
-    Product: function(app){
-        app.post("/create",urlencode,function(request, response){
-            db.insert('products',request.body,function(result){
-                response.send(result);            
-            })
-        })
-        app.post("/search",urlencode,function(request, response){
-            db.select('products',request.body,function(result){
-                response.send(result);            
-            })
-        })
-        app.post("/delete",urlencode,function(request, response){
-            db.delete('products',request.body,function(result){
-                console.log(result);
-                response.send(result);
-            })
-        })
-    }
+var route = {
+    "search":function(_data,_callback){
+        // console.log(_data.name)
+        db.select('users',_data,function(result){
+            _callback(result);
+        });
+     },
+    "/create":function(_data,_callback){
+        db.add('users',_data,function(result){
+            _callback(result);
+        
+        });
+     }
 };
+module.exports = route;
