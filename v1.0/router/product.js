@@ -1,7 +1,7 @@
 var db = require('../DBHelper.js');
 
 var route = {
-    "search":function(_data,_callback){
+    "/search":function(_data,_callback){
         // console.log(_data.name)
         db.select('users',_data,function(result){
             _callback(result);
