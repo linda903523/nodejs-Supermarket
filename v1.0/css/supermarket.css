@@ -1,0 +1,46 @@
+.head{background-color:#196EC4; position:relative; border-radius:5px 5px;}
+.head h1{color:#fff; padding-left:30px; line-height:50px;}
+.head>span{position:absolute; top:-8px; right:0px; font-size:30px;}
+.head span:hover{color:#f15c18; cursor:pointer;}
+.register{position:absolute; top:0px; right:60px;}
+.register span{float:left; font-size:16px; padding:0 15px; line-height:30px; color:#fff;}
+
+.nav{position:relative; }
+.nav h3{background-color:#196EC4; padding-left:50px; border-radius:5px 5px; box-shadow:0px 4px 7px -4px inset; line-height:30px;}
+.nav span{position:absolute; right:0px; top:-8px; font-size:30px;}
+.nav span:hover{color:#f15c18; cursor:pointer;}
+
+.manage{float:left;}
+.manage ul{width:160px; padding-left:40px; background-color:#859DDD; height:800px;}
+.manage ul li{}
+.manage ul li a{height:50px; color:#fff; line-height:50px; text-align:center; background-color:#6071B6; }
+.manage ul li a:hover{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
+
+.detail{float:left; padding-left:20px;width:1000px; /*display:none;*/}
+.product_detail{padding-top:10px;}
+.product_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
+
+.seek{margin-bottom:30px;}
+.seek a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
+.seek input{/*border-radius:10px 10px;*/}
+
+.table_th table tr th{background-color:#666; color:#fff;}
+.table_th table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
+.Meter meter{width:44px;}
+.Meter button{display:none;}
+.Meter:hover button{display:block;}
+.Meter:hover meter{display:none;}
+
+.added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
+.added table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
+#app{cursor:pointer;}
+.added_id{display:none;}
+.page{ float:right;}
+.page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
+.page>a:hover{border:1px solid #f15c18; color:#f15C18; text-decoration:none;}
+
+.login{border:1px solid #ddd; width:400px; height:400px; position:absolute; top:150px; left:500px; display:none;}
+.login h3{background-color:skyblue; line-height:50px;}
+.login h3 i{padding:0 10px; color:yellow;}
+.login_input p{padding:20px 0 0 80px;}
+.login_input button{margin:30px 0 0 120px;padding:10px 20px;}

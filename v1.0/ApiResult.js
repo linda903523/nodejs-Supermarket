@@ -1,4 +1,4 @@
-module.exports = function(_result,_data,_message){
-    var result = {status:_result,data:_data || null,message:_message || null};
+module.exports=function(_status,_data,_message){
+    var result={status:_status,data:_data,message:_message};
     return JSON.stringify(result);
 }
