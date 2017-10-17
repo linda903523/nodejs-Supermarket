@@ -16,9 +16,9 @@ module.exports = {
             }
         });
         app.use(express.static(__dirname + '/'));
-        app.listen(12);
 
         user.User(app);
         product.Product(app);
+        app.listen(12);
     }
 }
