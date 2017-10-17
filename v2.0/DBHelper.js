@@ -43,7 +43,6 @@ module.exports = {
                                 _callback(apiResult(true,dataset));
                             }
                         })
-
                     }
                     db.close();
                 })
@@ -62,7 +61,7 @@ module.exports = {
                         _callback(apiResult(false,null,error));
                         return false;
                     } else {
-                        collection.save(_data);
+                        collection.update(JSON.parse(_data.lists),JSON.parse(_data.goods));
                         _callback(apiResult(true));
                     }
                     db.close();

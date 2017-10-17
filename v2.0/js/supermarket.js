@@ -75,7 +75,7 @@ jQuery(function($){
             var listsql=response.data;
             var th=$.map(listsql,function(item){
                 return `<tr class="table_tr">
-                    <td><input type="checkbox" name="check"></td>
+                    <td><input type="checkbox" name="check" class="check"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
                     <td><input type="text" class="input3" value="${item.id}"/></td>
@@ -137,38 +137,47 @@ jQuery(function($){
 
     //修改商品
     setTimeout(function(){
-        $('.btnUpdata').click(function(){
-            var a = $(this).parent().parent().children();
-            var va1 = a[1].firstChild.value;
-            var va2 = a[2].firstChild.value;
-            var va3 = a[3].firstChild.value;
-            var va4 = a[4].firstChild.value;
-            var va5 = a[5].firstChild.value;
-            var va6 = a[6].firstChild.value;
-            var va7 = a[7].firstChild.value;
-            var va8 = a[8].firstChild.value;
-            $.post(common.baseUrl + '/update',{
-                    name:va1,
-                    tiaoma:va2,
-                    id:va3,
-                    img:va4,
-                    dizhi:va5,
-                    number:va6,
-                    shoujia:va7,
-                    bianhao:va8
-                },function(){
-                    asd();
+        var va11,va12,va13,va14,va15,va16,va17,va18;
+        $('.check').each(function(i){
+            $(this).click(function(){
+                 var check=$(this).parent().parent().children();
+                 if(check[0].firstChild.checked){
+                    va11=check[1].firstChild.value;
+                    va12=check[2].firstChild.value;
+                    va13=check[3].firstChild.value;
+                    va14=check[4].firstChild.value;
+                    va15=check[5].firstChild.value;
+                    va16=check[6].firstChild.value;
+                    va17=check[7].firstChild.value;
+                    va18=check[8].firstChild.value;
+                }
+            })
+        })
+        $('.btnUpdata').each(function(i){
+            $(this).click(function(){
+                var a = $(this).parent().parent().children();
+                var va1 = a[1].firstChild.value;
+                var va2 = a[2].firstChild.value;
+                var va3 = a[3].firstChild.value;
+                var va4 = a[4].firstChild.value;
+                var va5 = a[5].firstChild.value;
+                var va6 = a[6].firstChild.value;
+                var va7 = a[7].firstChild.value;
+                var va8 = a[8].firstChild.value;
+                $.post(common.baseUrl + '/update',{goods:JSON.stringify({name:va1,tiaoma:va2,id:va3,img:va4,dizhi:va5,number:va6,shoujia:va7,bianhao:va8}),lists:JSON.stringify({name:va11,tiaoma:va12,id:va13,img:va14,dizhi:va15,number:va16,shoujia:va17,bianhao:va18})},function(response){
+                            console.log(response);
+                })
             })
         })
     },3000)
-    
+
     function asd(){
         $.post(common.baseUrl + '/search',{},function(response){
             response = JSON.parse(response);
             var listsql = response.data;
             var th = $.map(listsql,function(item){
                 return `<tr class="table_tr">
-                    <td><input type="checkbox" name="check"></td>
+                    <td><input type="checkbox" name="check" class="check"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
                     <td><input type="text" class="input3" value="${item.id}"/></td>
