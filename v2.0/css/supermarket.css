@@ -16,7 +16,7 @@
 .manage ul li a{height:50px; color:#fff; line-height:50px; text-align:center; background-color:#6071B6; }
 .manage ul li a:hover{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
 
-.detail{float:left; padding-left:20px;width:1000px; display:none;}
+.detail{float:left; padding-left:20px;width:1100px; display:none;}
 .product_detail{padding-top:10px;}
 .product_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 
@@ -31,10 +31,10 @@
 .Meter:hover button{display:block;}
 .Meter:hover meter{display:none;}
 
-.added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
+.added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;display:inline-block;margin-right:30px;}
 .added table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app{cursor:pointer;}
-.added_id{display:none;}
+.added_id{display:none;width:959px;}
 .page{ float:right;}
 .page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
 .page>a:hover{border:1px solid #f15c18; color:#f15C18; text-decoration:none;}

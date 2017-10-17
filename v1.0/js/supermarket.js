@@ -1,5 +1,5 @@
 jQuery(function($){
-    //显示登录框
+    /*//显示登录框
     $('#login').click(function(){
         $('.login').show();
     })
@@ -19,14 +19,14 @@ jQuery(function($){
             response=JSON.parse(response);
              console.log(response.status);
             if(response.status){
-                alert('登录成功');
+                alert('登录成功');*/
                 $('.login').hide();
                 $('.detail').show();
-            } else {
+           /* } else {
                 alert(response.message);
             }
         })
-    })
+    })*/
 
     asd();
     // 采购  到采购管理
@@ -51,7 +51,7 @@ jQuery(function($){
             dizhi:$('#input_ss .input5').val(),
             number:$('#input_ss .input6').val(),
             shoujia:$('#input_ss .input7').val(),
-            bianhao:$('#input_ss .input8').val(),
+            bianhao:$('#input_ss .input8').val()
         },function(response){
             console.log(response);
             response=JSON.parse(response);
@@ -106,12 +106,12 @@ jQuery(function($){
         $.post("http://localhost:12/search",{
             name:$('#shousuo').val()
         },function(response){
-            // console.log(response)
+            // console.log(response)var 
             response=JSON.parse(response);
-            listsql=response.data;
+            var listsql=response.data;
             console.log(listsql);
             // console.log( listsql);
-            var listsql=JSON.parse(listsql);
+            listsql=JSON.parse(listsql);
             console.log(listsql);
             console.log(typeof listsql);
             var th=$.map(listsql,function(item){

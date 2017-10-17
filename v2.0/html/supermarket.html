@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/base.css"/>
     <link rel="stylesheet" href="../css/supermarket.css"/>
     <script src="../lib/jquery-3.2.1.min.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 <body>
     <div id="header">
@@ -69,22 +70,22 @@
                 </div>
                 <div class="table_th">
                   <table class="table table-bordered table-striped ">
-                  <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>商品名称</th>
-                            <th>商品条码</th>
-                            <th>商品编号(id)</th>
-                            <th>商品图片</th>
-                            <th>厂商地址</th>
-                            <th>库存数量</th>
-                            <th>零售价</th>
-                            <th>货架编号</th>
-                            <th>采购</th>
-                            <th>删除</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
+                      <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>商品名称</th>
+                                <th>商品条码</th>
+                                <th>商品编号(id)</th>
+                                <th>商品图片</th>
+                                <th>厂商地址</th>
+                                <th>库存数量</th>
+                                <th>零售价</th>
+                                <th>货架编号</th>
+                                <th>采购</th>
+                                <th>删除</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
                   </table>
                 </div>
                 <div class="added">
@@ -112,7 +113,7 @@
                             <td><input type="text" class="input6"/></td>
                             <td><input type="text" class="input7"/></td>
                             <td><input type="text" class="input8"/></td>
-                            <td class="Meter"></td>
+                            <td class="Meter"><meter min="1" max="100"  low="30"hight="80" optimun="90"></meter><button>采购</button></td>
                             <td><span id="app">添加</span></td>
                         </tr>
                     </table>
@@ -123,7 +124,8 @@
                         <a href="javascript:;">4</a>
                         <a href="javascript:;">5</a>
                     </div>
-                    <a href="javascript:;">新增商品</a>
+                    <a href="javascript:;" id="btnAdd">新增商品</a>
+                    <a href="javascript:;" id="btnUpdata">提交修改</a>
                 </div>
             </div>
         </div>

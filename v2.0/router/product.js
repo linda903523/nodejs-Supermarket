@@ -20,5 +20,10 @@ module.exports = {
                 response.send(result);
             })
         })
+        app.post("/update",urlencode,function(request, response){
+            db.update('products',request.body,function(result){
+                response.send(result);            
+            })
+        })
     }
 };

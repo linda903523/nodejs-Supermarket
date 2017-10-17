@@ -12,9 +12,9 @@
 
 .manage{float:left;}
 .manage ul{width:160px; padding-left:40px; background-color:#859DDD; height:800px;}
-.manage ul li{}
 .manage ul li a{height:50px; color:#fff; line-height:50px; text-align:center; background-color:#6071B6; }
-.manage ul li a:hover{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
+.manage ul li.product a{background-color:#fff;color:#000;border-radius:5px 0 0 5px/5px 0 0 5px;}
+.manage ul li a:hover{color:#000; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
 
 .detail{float:left; padding-left:20px;width:1000px; display:none;}
 .product_detail{padding-top:10px;}
