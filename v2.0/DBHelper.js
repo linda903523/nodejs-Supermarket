@@ -1,6 +1,6 @@
 var apiResult = require('./ApiResult.js');
 var mongodb = require('mongodb');
-var dbServer = new mongodb.Server('10.3.131.10',27017);
+var dbServer = new mongodb.Server('10.3.131.29',27017);
 var db = new mongodb.Db('cuicui', dbServer);
 
 module.exports = {
@@ -62,7 +62,7 @@ module.exports = {
                         _callback(apiResult(false,null,error));
                         return false;
                     } else {
-                        collection.update(JSON.parse(_data.lists),JSON.parse(_data.goods));
+                        collection.save(_data);
                         _callback(apiResult(true));
                     }
                     db.close();
