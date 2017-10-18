@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入密码完成支付</title>
+    <link rel="stylesheet" href="../../../../lib/bootstrap/css/bootstrap.css">
+    <style>
+        body,html{width: 100%;}
+        body,h2,p{margin:0;}
+        h2{padding:10px 0;font-weight:normal;border-bottom:1px solid #ddd;line-height:60px;}
+        i{display:inline-block;margin:0 10px;color:blue;border-right:1px solid #ddd;padding-right:10px;}
+        div{width:90%;margin:0 auto;}
+        p{font-size:20px;line-height:80px;width:90%;}
+        input{outline:none;margin-bottom:40px;border:0 none;}
+        input:nth-child(2){height: 40px;border:2px solid #ddd;width:300px;}
+        input:last-child{height: 40px;width:100px;}
+        .complete{height:300px;background: #ddd;opacity:0.5;position:absolute;left:40px;top:100px;}
+        .complete h2{text-align:center;line-height:300px;border:0 none;}
+        .complete i{color:green;}
+    </style>
+    <script src="../lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <h2><i class="glyphicon glyphicon-arrow-left"></i>付款</h2>
+    <div>
+        <p>请输入密码完成支付：</p>
+        <input type="password"><br>
+        <input type="button" value="确定" id="btn">
+    </div>
+    <div class="complete"><h2><i class="glyphicon glyphicon-ok"></i>支付完成</h2></div>
+    <script>
+        $('.complete').hide();
+        $('#btn').click(function(){
+            $('.complete').show();
+        })
+    </script>
+</body>
+</html>
