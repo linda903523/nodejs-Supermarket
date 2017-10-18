@@ -61,7 +61,8 @@ jQuery(function($){
             shoujia:$('#input_ss .input7').val(),
             bianhao:$('#input_ss .input8').val(),
         },function(response){
-            if(response.ops[0]){
+            response = JSON.parse(response);
+            if(response.status){
                 alert('添加成功');
                 $('.added_id').css({display:"none"})
                 $('.added_id td input').val('');
@@ -76,9 +77,9 @@ jQuery(function($){
     $('#shou').click(function(){
         $('.added>a').hide();
         $.post(common.baseUrl + '/search',{name:$('#shousuo').val()},function(response){
-            response=JSON.parse(response);
-            var listsql=response.data;
-            var th=$.map(listsql,function(item){
+            response = JSON.parse(response);
+            var listsql = response.data;
+            var th = $.map(listsql,function(item){
                 return `<tr class="table_tr">
                     <td><input type="checkbox" name="check" class="productCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
@@ -89,9 +90,9 @@ jQuery(function($){
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item. bianhao}"/></td>
-                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
+                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.id}">采购</button></td>
                     <td><input type="button" value="删除" class="productDel"/></td>
-                    <td><input type="button" value="修改" class="productEdit"/></td>
+                    <td><input type="button" value="编辑" class="productEdit"/></td>
                 </tr>`
             }).join('');
             $('.table_th tbody').html('');
@@ -106,41 +107,39 @@ jQuery(function($){
     })
 
     //删除商品
-    setTimeout(function(){
-        $('.productDel').each(function(){
-            $(this).click(function(){
-                var a = $(this).parent().parent().children();
-                $(this).parent().parent().remove();
-                var va1 = a[1].firstChild.value;
-                var va2 = a[2].firstChild.value;
-                var va3 = a[3].firstChild.value;
-                var va4 = a[4].firstChild.value;
-                var va5 = a[5].firstChild.value;
-                var va6 = a[6].firstChild.value;
-                var va7 = a[7].firstChild.value;
-                var va8 = a[8].firstChild.value;
-                $.post(common.baseUrl + '/delete',{
-                    name:va1,
-                    tiaoma:va2,
-                    id:va3,
-                    img:va4,
-                    dizhi:va5,
-                    number:va6,
-                    shoujia:va7,
-                    bianhao:va8
-                },function(response){
-                    response=JSON.parse(response);
-                    if(response.status){
-                        alert('删除成功');
-                    } else {
-                        alert(response.message);
-                    }
-                })                   
-            })
-        })
-    },3000)
+    $(document).on('click',function(e){
+        if($(e.target).attr('class') == 'productDel'){
+            var $name = $(e.target).parent().prevAll().find('.input1').val();
+            var $tiaoma = $(e.target).parent().prevAll().find('.input2').val();
+            var $id = $(e.target).parent().prevAll().find('.input3').val();
+            var $img = $(e.target).parent().prevAll().find('.input4').val();
+            var $dizhi = $(e.target).parent().prevAll().find('.input5').val();
+            var $number = $(e.target).parent().prevAll().find('.input6').val();
+            var $shoujia = $(e.target).parent().prevAll().find('.input7').val();
+            var $bianhao = $(e.target).parent().prevAll().find('.input8').val();
 
-    //修改商品
+            $.post(common.baseUrl + '/delete',{
+                name:$name,
+                tiaoma:$tiaoma,
+                id:$id,
+                img:$img,
+                dizhi:$dizhi,
+                number:$number,
+                shoujia:$shoujia,
+                bianhao:$bianhao
+            },function(response){
+                response=JSON.parse(response);
+                if(response.status){
+                    alert('删除成功');
+                    asd();
+                } else {
+                    alert(response.message);
+                }
+            })                   
+        }
+    })
+
+    //编辑商品：1.选择复选框  2.编辑信息  3.点击“编辑”
     setTimeout(function(){
         var va11,va12,va13,va14,va15,va16,va17,va18;
         $('.productCheck').each(function(i){
@@ -210,9 +209,9 @@ jQuery(function($){
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item.bianhao}"/></td>
-                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
+                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.id}">采购</button></td>
                     <td><input type="button" value="删除" class="productDel"/></td>
-                    <td><input type="button" value="修改" class="productEdit"/></td>
+                    <td><input type="button" value="编辑" class="productEdit"/></td>
                 </tr>`
             }).join('');
             $('.table_th tbody').html('');

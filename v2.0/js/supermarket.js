@@ -90,7 +90,7 @@ jQuery(function($){
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item. bianhao}"/></td>
-                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
+                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.id}">采购</button></td>
                     <td><input type="button" value="删除" class="productDel"/></td>
                     <td><input type="button" value="修改" class="productEdit"/></td>
                 </tr>`
@@ -211,7 +211,7 @@ jQuery(function($){
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item.bianhao}"/></td>
-                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
+                    <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.id}">采购</button></td>
                     <td><input type="button" value="删除" class="productDel"/></td>
                     <td><input type="button" value="修改" class="productEdit"/></td>
                 </tr>`

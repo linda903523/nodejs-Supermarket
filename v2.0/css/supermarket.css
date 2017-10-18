@@ -126,7 +126,7 @@
 .user_detail p{line-height:25px;overflow:hidden;margin:20px 0;}
 .user_detail p span{display:block;padding:0 10px;float:left;border:1px solid #ddd;margin-right:20px;cursor:pointer;}
 .user_detail .active{background-color:#89C9E2;color:#ffffff;}
-.user_detail  .vip  th{padding:0 15px;text-align:center;}
+.user_detail  .table_th11  th{padding:0 15px;text-align:center;}
 .user_detail .table_users{ border:1px solid #ccc;width:100%;border-collapse: collapse;margin-top:20px;}
 .user_detail td,.user_detail th{border:1px solid #ccc;padding:0;}
 .user_detail tbody input{width:90px;border:none;}         

@@ -1,4 +1,5 @@
 jQuery(function($){
+    // xxxxxxxxxxxxxx收货管理xxxxxxxxxxxxxxxxxxxx
     $('.receipt').on('click',function(){
         axc();
     })

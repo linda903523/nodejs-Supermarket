@@ -78,30 +78,19 @@ jQuery(function($){
             console.log(listsql);
 
             if(response.status){
-                for(var i=0; i<listsql.length; i++){
-                    console.log(listsql[i].name);
-                    $.post(common.baseUrl + '/rec_search',{
-                        // name: listsql[i].name,
-                        // tiaoma: listsql[i].tiaoma,
-                        // id: listsql[i].id,
-                        // img: listsql[i].img,
-                        // dizhi: listsql[i].dizhi,
-                        // number: listsql[i].number,
-                        // shoujia: listsql[i].shoujia,
-                        // bianhao: listsql[i].bianhao,
-                        // purchase: listsql[i].purchase,
-                        // whole: listsql[i].whole,
-                        // offic: listsql[i].offic,
-                        // offic_many: listsql[i].offic_many,
-                    },function(response){
-                        response = JSON.parse(response);
+                alert('提交成功');
+                for(var key in listsql){
+                    console.log(listsql[key])
+                    $.post(common.baseUrl + '/rec_create',listsql[key],function(response){
+                        response=JSON.parse(response);
+                            console.log(response)
                         if(response.status){
-                            alert('成功');
+                            alert('采购成功');
                         } else {
-                            alert('失败');
+                            alert('采购失败');
                         }
                     })
-                }
+                }                
             } else {
                 alert(response.message); 
             }

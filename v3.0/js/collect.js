@@ -1,4 +1,5 @@
 jQuery(function($){
+    // xxxxxxxxxxxxxx收银管理xxxxxxxxxxxxxxxxxxxx
     ////////////////删除//////////////////// 
     $(document).on('click',function(e){
 

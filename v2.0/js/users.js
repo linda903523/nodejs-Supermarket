@@ -30,7 +30,7 @@ jQuery(function($){
 
     //删除用户
     setTimeout(function(){
-        $('.userDel').each(function(i){
+        $('.userDel').each(function(){
             $(this).click(function(){
                 var a = $(this).parent().parent().children();
                 $(this).parent().parent().remove();
@@ -54,6 +54,12 @@ jQuery(function($){
                     shengfen:va8,
                     chengshi:va9
                 },function(response){
+                    /*response=JSON.parse(response);
+                    if(response.status){
+                        alert('删除成功');
+                    } else {
+                        alert(response.message);
+                    }*/
                     user();
                 })
             })

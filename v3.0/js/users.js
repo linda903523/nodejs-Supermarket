@@ -29,36 +29,39 @@ jQuery(function($){
     })
 
     //删除用户
-    setTimeout(function(){
-        $('.userDel').each(function(i){
-            $(this).click(function(){
-                var a = $(this).parent().parent().children();
-                $(this).parent().parent().remove();
-                var va1 = a[1].firstChild.value;
-                var va2 = a[2].firstChild.value;
-                var va3 = a[3].firstChild.value;
-                var va4 = a[4].firstChild.value;
-                var va5 = a[5].firstChild.value;
-                var va6 = a[6].firstChild.value;
-                var va7 = a[7].firstChild.value;
-                var va8 = a[8].firstChild.value;
-                var va9 = a[9].firstChild.value;
-                $.post(common.baseUrl + '/user_delete',{
-                    name:va1,
-                    lianxiren:va2,
-                    phone:va3,
-                    leibei:va4,
-                    mail:va5,
-                    dizhi:va6,
-                    zhanghao:va7,
-                    shengfen:va8,
-                    chengshi:va9
-                },function(response){
+    $(document).on('click',function(e){
+        if($(e.target).attr('class') == 'userDel'){
+            var $name = $(e.target).parent().prevAll().find('.input1').val();
+            var $lianxiren = $(e.target).parent().prevAll().find('.input2').val();
+            var $phone = $(e.target).parent().prevAll().find('.input3').val();
+            var $leibei = $(e.target).parent().prevAll().find('.input4').val();
+            var $mail = $(e.target).parent().prevAll().find('.input5').val();
+            var $dizhi = $(e.target).parent().prevAll().find('.input6').val();
+            var $zhanghao = $(e.target).parent().prevAll().find('.input7').val();
+            var $shengfen = $(e.target).parent().prevAll().find('.input8').val();
+            var $chengshi = $(e.target).parent().prevAll().find('.input8').val();
+
+            $.post(common.baseUrl + '/user_delete',{
+                name:$name,
+                lianxiren:$lianxiren,
+                phone:$phone,
+                leibei:$leibei,
+                mail:$mail,
+                dizhi:$dizhi,
+                zhanghao:$zhanghao,
+                shengfen:$shengfen,
+                chengshi:$chengshi
+            },function(response){
+                response=JSON.parse(response);
+                if(response.status){
+                    alert('删除成功');
                     user();
-                })
+                } else {
+                    alert(response.message);
+                }
             })
-        })
-    },3000)
+        }
+    })
 
     //编辑用户
     setTimeout(function(){

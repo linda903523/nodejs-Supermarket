@@ -26,7 +26,8 @@
 /*、、、产品、、、*/
 .product_detail{padding-top:10px;}
 .product_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-
+.product_detail .productDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.product_detail .productEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
 .seek{margin-bottom:30px;}
 .seek a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
 .seek input{/*border-radius:10px 10px;*/}
@@ -49,17 +50,12 @@
 .purchase_detail h2{text-align:center;}
 .purchase_detail h2 p{width:200px; margin:20px auto; background-color:#ccc;}
 .purchase_detail h2 p:hover{width:200px; margin:20px auto; background-color:#c15f18; color:#fff; cursor:pointer;}
-
+.purchase_detail .btnDel_pur{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
 .seek2{margin-bottom:30px;}
 .seek2 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.seek2 input{/*border-radius:10px 10px;*/}
 
 .table_th2 table tr th{background-color:#666; color:#fff;}
 .table_th2 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
-.Meter meter{width:44px;}
-.Meter button{display:none;}
-.Meter:hover button{display:block;}
-.Meter:hover meter{display:none;}
 
 .added2>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 .added2 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
@@ -76,10 +72,6 @@
 
 .table_th3 table tr th{background-color:#666; color:#fff;}
 .table_th3 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
-.Meter meter{width:44px;}
-.Meter button{display:none;}
-.Meter:hover button{display:block;}
-.Meter:hover meter{display:none;}
 
 .added3>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 .added3 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
@@ -93,22 +85,34 @@
 /*、、、收货、、、*/
 .receipt_detail{padding-top:10px; display:none;}
 .receipt_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-
+.receipt_detail .btnDel_rec{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
 .seek5{margin-bottom:30px;}
 .seek5 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
 .seek5 input{/*border-radius:10px 10px;*/}
 
 .table_th5 table tr th{background-color:#666; color:#fff;}
 .table_th5 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
-.Meter meter{width:44px;}
-.Meter button{display:none;}
-.Meter:hover button{display:block;}
-.Meter:hover meter{display:none;}
 
 .added5>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 .added5 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app5{cursor:pointer;}
 .added_id5{display:none;}
+
+/*、、、退货、、、*/
+.returns_detail{padding-top:10px; display:none;}
+.returns_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
+.returns_detail .btnDel_rec{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.seek6{margin-bottom:30px;}
+.seek6 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
+.seek6 input{/*border-radius:10px 10px;*/}
+
+.table_th6 table tr th{background-color:#666; color:#fff;}
+.table_th6 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
+
+.added6>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
+.added6 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
+#app6{cursor:pointer;}
+.added_id6{display:none;}
 
 /*、、、收银、、、*/
 .collect_detail{padding-top:10px; display:none;}
@@ -116,7 +120,7 @@
 .seek7{margin-bottom:30px;}
 .seek7 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
 .seek7 input{/*border-radius:10px 10px;*/}
-
+.collect_detail .btnDel_col{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
 .table_th7 table tr th{background-color:#666; color:#fff;}
 .table_th7 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
 
@@ -126,7 +130,7 @@
 .user_detail p{line-height:25px;overflow:hidden;margin:20px 0;}
 .user_detail p span{display:block;padding:0 10px;float:left;border:1px solid #ddd;margin-right:20px;cursor:pointer;}
 .user_detail .active{background-color:#89C9E2;color:#ffffff;}
-.user_detail  .vip  th{padding:0 15px;text-align:center;}
+.user_detail  .table_th11  th{padding:0 15px;text-align:center;}
 .user_detail .table_users{ border:1px solid #ccc;width:100%;border-collapse: collapse;margin-top:20px;}
 .user_detail td,.user_detail th{border:1px solid #ccc;padding:0;}
 .user_detail tbody input{width:90px;border:none;}         
