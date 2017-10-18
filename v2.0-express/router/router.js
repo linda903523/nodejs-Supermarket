@@ -1,5 +1,7 @@
 var user = require('./user.js');
 var product = require('./product.js');
+var purchase = require('./purchase.js');
+var receipt = require('./receipt.js');
 
 module.exports = {
     Handle: function(express){
@@ -19,6 +21,9 @@ module.exports = {
 
         user.User(app);
         product.Product(app);
+        purchase.Purchase(app);
+        receipt.Receipt(app);
+
         app.listen(12);
     }
 }

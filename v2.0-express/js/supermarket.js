@@ -15,9 +15,7 @@ jQuery(function($){
             username:$('#username').val(),
             password:$('#password').val()
         },function(response){
-            console.log(response);
             response=JSON.parse(response);
-             console.log(response.status);
             if(response.status){
                 alert('登录成功');*/
                 $('.login').hide();
@@ -28,10 +26,20 @@ jQuery(function($){
         })
     })*/
 
-    asd();
-    // 采购  到采购管理
+    //导航条xxxxxxxxxxxxxxxxxxxxxx
+    var $manage_a = $('.manage>ul>li>a');
+    for(let i=0;i<$manage_a.length;i++){
+        // 默认产品管理
+        $manage_a.eq(0).addClass('active');
+        $('.' + $manage_a.eq(0).addClass('active').parent('li').attr('class') + '_detail').css({display : 'block'})
+        $manage_a.eq(i).on('click',function(){
+            $(this).addClass('active').parent('li').siblings('li').find('a').removeClass('active');
+            var $classDetail=$(this).parent('li').attr('class');
+            $('.' + $classDetail + '_detail').css({display : 'block'}).siblings('div').css({display : 'none'});
+        })
+    }
     
-    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    asd();
     // 
     // 新增按钮xxxxxxxxxxxxxxxxxxxxxxxxxxx
     $('#btnAdd').on('click', function(){
@@ -53,9 +61,7 @@ jQuery(function($){
             shoujia:$('#input_ss .input7').val(),
             bianhao:$('#input_ss .input8').val(),
         },function(response){
-            console.log(response);
             response=JSON.parse(response);
-             console.log(response.status);
             if(response.status){
                 alert('添加成功');
                 $('.added_id').css({display:"none"})
@@ -75,7 +81,7 @@ jQuery(function($){
             var listsql=response.data;
             var th=$.map(listsql,function(item){
                 return `<tr class="table_tr">
-                    <td><input type="checkbox" name="check" class="check"></td>
+                    <td><input type="checkbox" name="check" class="productCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
                     <td><input type="text" class="input3" value="${item.id}"/></td>
@@ -85,8 +91,8 @@ jQuery(function($){
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item. bianhao}"/></td>
                     <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
-                    <td><input type="button" value="删除" class="btnDel"/></td>
-                    <td><input type="button" value="修改" class="btnUpdata"/></td>
+                    <td><input type="button" value="删除" class="productDel"/></td>
+                    <td><input type="button" value="修改" class="productEdit"/></td>
                 </tr>`
             }).join('');
             $('.table_th tbody').html('');
@@ -102,7 +108,7 @@ jQuery(function($){
 
     //删除商品
     setTimeout(function(){
-        $('.btnDel').each(function(){
+        $('.productDel').each(function(){
             $(this).click(function(){
                 var a = $(this).parent().parent().children();
                 $(this).parent().parent().remove();
@@ -138,22 +144,22 @@ jQuery(function($){
     //修改商品
     setTimeout(function(){
         var va11,va12,va13,va14,va15,va16,va17,va18;
-        $('.check').each(function(i){
+        $('.productCheck').each(function(i){
             $(this).click(function(){
-                 var check=$(this).parent().parent().children();
+                 var check = $(this).parent().parent().children();
                  if(check[0].firstChild.checked){
-                    va11=check[1].firstChild.value;
-                    va12=check[2].firstChild.value;
-                    va13=check[3].firstChild.value;
-                    va14=check[4].firstChild.value;
-                    va15=check[5].firstChild.value;
-                    va16=check[6].firstChild.value;
-                    va17=check[7].firstChild.value;
-                    va18=check[8].firstChild.value;
+                    va11 = check[1].firstChild.value;
+                    va12 = check[2].firstChild.value;
+                    va13 = check[3].firstChild.value;
+                    va14 = check[4].firstChild.value;
+                    va15 = check[5].firstChild.value;
+                    va16 = check[6].firstChild.value;
+                    va17 = check[7].firstChild.value;
+                    va18 = check[8].firstChild.value;
                 }
             })
         })
-        $('.btnUpdata').each(function(i){
+        $('.productEdit').each(function(i){
             $(this).click(function(){
                 var a = $(this).parent().parent().children();
                 var va1 = a[1].firstChild.value;
@@ -164,8 +170,27 @@ jQuery(function($){
                 var va6 = a[6].firstChild.value;
                 var va7 = a[7].firstChild.value;
                 var va8 = a[8].firstChild.value;
-                $.post(common.baseUrl + '/update',{goods:JSON.stringify({name:va1,tiaoma:va2,id:va3,img:va4,dizhi:va5,number:va6,shoujia:va7,bianhao:va8}),lists:JSON.stringify({name:va11,tiaoma:va12,id:va13,img:va14,dizhi:va15,number:va16,shoujia:va17,bianhao:va18})},function(response){
-                            console.log(response);
+                $.post(common.baseUrl + '/update',{
+                    goods:JSON.stringify({
+                        name:va1,
+                        tiaoma:va2,
+                        id:va3,
+                        img:va4,
+                        dizhi:va5,
+                        number:va6,
+                        shoujia:va7,
+                        bianhao:va8
+                    }),lists:JSON.stringify({
+                        name:va11,
+                        tiaoma:va12,
+                        id:va13,
+                        img:va14,
+                        dizhi:va15,
+                        number:va16,
+                        shoujia:va17,
+                        bianhao:va18
+                    })},function(response){
+                        $('.table_th').find(':checkbox').prop('checked',false);
                 })
             })
         })
@@ -177,7 +202,7 @@ jQuery(function($){
             var listsql = response.data;
             var th = $.map(listsql,function(item){
                 return `<tr class="table_tr">
-                    <td><input type="checkbox" name="check" class="check"></td>
+                    <td><input type="checkbox" name="check" class="productCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
                     <td><input type="text" class="input3" value="${item.id}"/></td>
@@ -187,8 +212,8 @@ jQuery(function($){
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item.bianhao}"/></td>
                     <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.bianhao}">采购</button></td>
-                    <td><input type="button" value="删除" class="btnDel"/></td>
-                    <td><input type="button" value="修改" class="btnUpdata"/></td>
+                    <td><input type="button" value="删除" class="productDel"/></td>
+                    <td><input type="button" value="修改" class="productEdit"/></td>
                 </tr>`
             }).join('');
             $('.table_th tbody').html('');

@@ -70,7 +70,6 @@ module.exports = {
         })
     },
     delete:function(_collection,_data,_callback){
-        console.log( _data);
         db.open(function(error, db){
             if(error){
                 _callback(apiResult(false,null,error));
