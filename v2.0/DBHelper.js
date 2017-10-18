@@ -19,9 +19,9 @@ module.exports = {
                         collection.insert(_data);
                         _callback(apiResult(true));
                     }
-                    db.close();
                 })                
             }
+            db.close();
         })
     },
     select:function(_collection,_condition,_callback){
@@ -44,9 +44,9 @@ module.exports = {
                             }
                         })
                     }
-                    db.close();
                 })
             }
+            db.close();
         })
     },
     update:function(_collection,_data,_callback){
@@ -64,9 +64,9 @@ module.exports = {
                         collection.update(JSON.parse(_data.lists),JSON.parse(_data.goods));
                         _callback(apiResult(true));
                     }
-                    db.close();
                 })              
             }
+            db.close();
         })
     },
     delete:function(_collection,_data,_callback){
@@ -84,9 +84,9 @@ module.exports = {
                         collection.remove(_data);
                         _callback(apiResult(true));
                     }
-                    db.close();
                 })
             }
+            db.close();
         })
     }
 }
