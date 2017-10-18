@@ -8,7 +8,7 @@ jQuery(function($){
                 var seda=response.data;
                 if(response.status){
                     // alert('采购成功');
-                    // console.log(seda);
+                    console.log(response);
                     // console.log(seda[0].name)
                     $.post(common.baseUrl + '/pur_create',{
                         name:seda[0].name,
@@ -47,14 +47,14 @@ jQuery(function($){
     })
     ////////////////删除////////////////////
     $(document).on('click',function(e){
-        if($(e.target).attr('class') == 'btnDel'){
+        if($(e.target).attr('class') == 'btnDel_pur'){
             // $(e.target).
             var $bianhao_id = $(e.target).parent('td').prevAll().eq(6).find('input').val();
             console.log($bianhao_id);
             $.post(common.baseUrl+'/pur_delete',{id:$bianhao_id},function(response){
                 // console.log(response)
                 response=JSON.parse(response);
-                console.log(response);
+                // console.log(response);
         
                 if(response.status){
                         alert('删除成功');
@@ -125,7 +125,7 @@ jQuery(function($){
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item.bianhao}"/></td>
                     <td class="tota">${item.purchase*item.whole}</td>
-                    <td><input type="button" value="删除" class="btnDel"/></td>
+                    <td><input type="button" value="删除" class="btnDel_pur"/></td>
                 </tr>`
             }).join('');
             $('.table_th2 tbody').html('');

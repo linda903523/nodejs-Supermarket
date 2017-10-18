@@ -61,8 +61,7 @@ jQuery(function($){
             shoujia:$('#input_ss .input7').val(),
             bianhao:$('#input_ss .input8').val(),
         },function(response){
-            response=JSON.parse(response);
-            if(response.status){
+            if(response.ops[0]){
                 alert('添加成功');
                 $('.added_id').css({display:"none"})
                 $('.added_id td input').val('');

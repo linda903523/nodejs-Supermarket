@@ -11,7 +11,6 @@ module.exports = {
         })
         app.post("/rec_search",urlencode,function(request, response){
             db.select('receipt',request.body,function(result){
-                console.log(result);
                 response.send(result);            
             })
         })

@@ -19,7 +19,7 @@ jQuery(function($){
                     <td><input type="text" class="input7" value="${item.offic}"/></td>
                     <td><input type="text" class="input8" value="${item.offic_many}"/></td>
                     <td class="tota5">${item.purchase*item.whole}</td>
-                    <td><input type="button" value="删除" class="btnDel"/></td>
+                    <td><input type="button" value="删除" class="btnDel_rec"/></td>
                 </tr>`
             }).join('');
             $('.table_th5 tbody').html('');
@@ -30,4 +30,29 @@ jQuery(function($){
             }
         })
     }
+
+    ////////////////删除//////////////////// 
+    $(document).on('click',function(e){
+        if($(e.target).attr('class') == 'btnDel_rec'){
+            // $(e.target).
+            var $bianhao_id = $(e.target).parent('td').prevAll().eq(6).find('input').val();
+            // console.log($bianhao_id);
+            $.post(common.baseUrl+'/rec_delete',{id:$bianhao_id},function(response){
+                // console.log(response)
+                response=JSON.parse(response);
+                // console.log(response);
+        
+                if(response.status){
+                        alert('删除成功');
+                        // response.write(response.data);
+                        // window.location.href = 'login.html';
+                        axc();
+                    } else {
+                        alert(response.message);
+                    }
+
+            })
+        }
+        // console.log($(e.target));
+    })
 })
