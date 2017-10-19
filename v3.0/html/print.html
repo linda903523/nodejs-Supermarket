@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>print</title>
+    <script src="../lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <input type="button" id="btnPrint" value="Print"/>
+    <script type="text/javascript">
+        $(function(){
+            $('#btnPrint').on('click',function(){
+                $.post(common.baseUrl + '/col_search',{},function(response){
+                    response = JSON.parse(response);
+                    var listsql = response.data;
+                    console.log(listsql)
+                    var th = $.map(listsql,function(item){
+                        return `"皇冠超市\n*****************\n商品名称：${item.name}\n单品金额：${item.shoujia}\n商品数量：2 条\n总金额：5 元\n*********************\n"`
+                       
+                    }).join('');
+                    $.post("http://10.3.131.33:81/print", {text:th},function(res){
+                        console.log(res);
+                    })
+                    // 获取所有商品总计        
+                })
+            })
+        })
+    </script>
+</body>
+</html>

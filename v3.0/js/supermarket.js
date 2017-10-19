@@ -26,7 +26,7 @@ jQuery(function($){
         })
     })*/
 
-    //导航条xxxxxxxxxxxxxxxxxxxxxx
+    //导航条：点击模块出现相应的数据表
     var $manage_a = $('.manage>ul>li>a');
     for(let i=0;i<$manage_a.length;i++){
         // 默认产品管理
@@ -39,8 +39,8 @@ jQuery(function($){
         })
     }
     
-    asd();
-    // 
+    product();
+    
     // 新增按钮xxxxxxxxxxxxxxxxxxxxxxxxxxx
     $('#btnAdd').on('click', function(){
         $('.added_id').css({display : "block"})
@@ -66,7 +66,7 @@ jQuery(function($){
                 alert('添加成功');
                 $('.added_id').css({display:"none"})
                 $('.added_id td input').val('');
-                asd();
+                product();
             } else {
                 alert(response.message);
             }
@@ -131,7 +131,7 @@ jQuery(function($){
                 response=JSON.parse(response);
                 if(response.status){
                     alert('删除成功');
-                    asd();
+                    product();
                 } else {
                     alert(response.message);
                 }
@@ -194,7 +194,7 @@ jQuery(function($){
         })
     },3000)
 
-    function asd(){
+    function product(){
         $.post(common.baseUrl + '/search',{},function(response){
             response = JSON.parse(response);
             var listsql = response.data;

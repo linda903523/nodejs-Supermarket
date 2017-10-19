@@ -1,10 +1,10 @@
+/*------------收货管理-----------*/
 jQuery(function($){
-    // xxxxxxxxxxxxxx收货管理xxxxxxxxxxxxxxxxxxxx
     $('.receipt').on('click',function(){
-        axc();
+        receipt();
     })
-    // axc()
-    function axc(){
+    
+    function receipt(){
         $.post(common.baseUrl + '/rec_search',{},function(response){
             response = JSON.parse(response);
             var listsql = response.data;
@@ -32,28 +32,19 @@ jQuery(function($){
         })
     }
 
-    ////////////////删除//////////////////// 
+    //删除
     $(document).on('click',function(e){
         if($(e.target).attr('class') == 'btnDel_rec'){
-            // $(e.target).
             var $bianhao_id = $(e.target).parent('td').prevAll().eq(6).find('input').val();
-            // console.log($bianhao_id);
             $.post(common.baseUrl+'/rec_delete',{id:$bianhao_id},function(response){
-                // console.log(response)
-                response=JSON.parse(response);
-                // console.log(response);
-        
+                response=JSON.parse(response);        
                 if(response.status){
-                        alert('删除成功');
-                        // response.write(response.data);
-                        // window.location.href = 'login.html';
-                        axc();
-                    } else {
-                        alert(response.message);
-                    }
-
+                    alert('删除成功');
+                    receipt();
+                } else {
+                    alert(response.message);
+                }
             })
         }
-        // console.log($(e.target));
     })
 })

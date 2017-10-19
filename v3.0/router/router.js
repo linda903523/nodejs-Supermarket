@@ -1,8 +1,11 @@
-var user = require('./user.js');
-var product = require('./product.js');
-var purchase = require('./purchase.js');
-var receipt = require('./receipt.js');
-var collect = require('./collect.js');
+var user = require('./users.js');
+var product = require('./products.js');
+var purchase = require('./purchases.js');
+var receipt = require('./receipts.js');
+var collect = require('./collects.js');
+var cancel = require('./cancels.js');
+var supplier = require('./suppliers.js');
+var path = require('path');
 
 module.exports = {
     Handle: function(express){
@@ -18,13 +21,15 @@ module.exports = {
                 next();
             }
         });
-        app.use(express.static(__dirname + '/'));
+        app.use(express.static(path.resolve(__dirname, '../')));
 
         user.User(app);
         product.Product(app);
         purchase.Purchase(app);
         receipt.Receipt(app);
         collect.Collect(app);
+        cancel.Cancel(app);
+        supplier.Supplier(app)
 
         app.listen(12);
     }

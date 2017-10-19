@@ -1,5 +1,5 @@
+/*------------用户管理-----------*/
 jQuery(function($){
-    // xxxxxxxxxxxxxx用户管理xxxxxxxxxxxxxxxxxxxx
     $('.user').on('click',function(){
         user();
     })
@@ -8,14 +8,12 @@ jQuery(function($){
     $('.button_user').click(function(){
         $.post(common.baseUrl + '/register',{
             name:$('.input1user').val(),
-            lianxiren:$('.input2user').val(),
-            phone:$('.input3user').val(),
-            leibei:$('.input4user').val(),
-            dizhi:$('.input5user').val(),
+            phone:$('.input2user').val(),
+            lianxiren:$('.input3user').val(),
+            dizhi:$('.input4user').val(),
+            leibei:$('.input5user').val(),
             mail:$('.input6user').val(),
-            zhanghao:$('.input7user').val(),
-            shengfen:$('.input8user').val(),
-            chengshi:$('.input9user').val()
+            shengfen:$('.input7user').val()
         },function(response){
             response = JSON.parse(response);
             if(response.status){
@@ -32,25 +30,21 @@ jQuery(function($){
     $(document).on('click',function(e){
         if($(e.target).attr('class') == 'userDel'){
             var $name = $(e.target).parent().prevAll().find('.input1').val();
-            var $lianxiren = $(e.target).parent().prevAll().find('.input2').val();
-            var $phone = $(e.target).parent().prevAll().find('.input3').val();
-            var $leibei = $(e.target).parent().prevAll().find('.input4').val();
-            var $mail = $(e.target).parent().prevAll().find('.input5').val();
-            var $dizhi = $(e.target).parent().prevAll().find('.input6').val();
-            var $zhanghao = $(e.target).parent().prevAll().find('.input7').val();
-            var $shengfen = $(e.target).parent().prevAll().find('.input8').val();
-            var $chengshi = $(e.target).parent().prevAll().find('.input8').val();
+            var $phone = $(e.target).parent().prevAll().find('.input2').val();
+            var $lianxiren = $(e.target).parent().prevAll().find('.input3').val();
+            var $dizhi = $(e.target).parent().prevAll().find('.input4').val();
+            var $leibei = $(e.target).parent().prevAll().find('.input5').val();
+            var $mail = $(e.target).parent().prevAll().find('.input6').val();
+            var $shengfen = $(e.target).parent().prevAll().find('.input7').val();
 
             $.post(common.baseUrl + '/user_delete',{
                 name:$name,
-                lianxiren:$lianxiren,
                 phone:$phone,
+                lianxiren:$lianxiren,
+                dizhi:$dizhi,
                 leibei:$leibei,
                 mail:$mail,
-                dizhi:$dizhi,
-                zhanghao:$zhanghao,
-                shengfen:$shengfen,
-                chengshi:$chengshi
+                shengfen:$shengfen
             },function(response){
                 response=JSON.parse(response);
                 if(response.status){
@@ -65,7 +59,7 @@ jQuery(function($){
 
     //编辑用户
     setTimeout(function(){
-        var va11,va12,va13,va14,va15,va16,va17,va18,va19;
+        var va11,va12,va13,va14,va15,va16,va17;
         $('.userCheck').each(function(i){
             $(this).click(function(){
                 var check = $(this).parent().parent().children();
@@ -77,8 +71,6 @@ jQuery(function($){
                     va15 = check[5].firstChild.value;
                     va16 = check[6].firstChild.value;
                     va17 = check[7].firstChild.value;
-                    va18 = check[8].firstChild.value;
-                    va19 = check[9].firstChild.value;
                 }
             })
         })
@@ -93,29 +85,23 @@ jQuery(function($){
                 var va5 = newa[5].firstChild.value;
                 var va6 = newa[6].firstChild.value;
                 var va7 = newa[7].firstChild.value;
-                var va8 = newa[8].firstChild.value;
-                var va9 = newa[9].firstChild.value;
                 $.post(common.baseUrl + '/user_updata',{
                     goods:JSON.stringify({
                         name:va1,
-                        lianxiren:va2,
-                        phone:va3,
-                        leibei:va4,
-                        mail:va5,
-                        dizhi:va6,
-                        zhanghao:va7,
-                        shengfen:va8,
-                        chengshi:va9
+                        phone:va2,
+                        lianxiren:va3,
+                        dizhi:va4,
+                        leibei:va5,
+                        mail:va6,
+                        shengfen:va7
                     }),lists:JSON.stringify({
                         name:va11,
-                        lianxiren:va12,
-                        phone:va13,
-                        leibei:va14,
-                        mail:va15,
-                        dizhi:va16,
-                        zhanghao:va17,
-                        shengfen:va18,
-                        chengshi:va19
+                        phone:va12,
+                        lianxiren:va13,
+                        dizhi:va14,
+                        leibei:va15,
+                        mail:va16,
+                        shengfen:va17
                     })},function(response){
                         $('.tbody_users').find(':checkbox').prop('checked',false);
                 })
@@ -133,14 +119,12 @@ jQuery(function($){
                 return `<tr>
                     <td><input type="checkbox" name="check" class="userCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
-                    <td><input type="text" class="input2" value="${item.lianxiren}"/></td>
-                    <td><input type="text" class="input3" value="${item.phone}"/></td>
-                    <td><input type="text" class="input4" value="${item.leibei}"/></td>
-                    <td><input type="text" class="input5" value="${item.mail}"/></td>
-                    <td><input type="text" class="input6" value="${item.dizhi}"/></td>
-                    <td><input type="text" class="input7" value="${item.zhanghao}"/></td>
-                    <td><input type="text" class="input8" value="${item.shengfen}"/></td>
-                    <td><input type="text" class="input9" value="${item. chengshi}"/></td>
+                    <td><input type="text" class="input2" value="${item.phone}"/></td>
+                    <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input4" value="${item.dizhi}"/></td>
+                    <td><input type="text" class="input5" value="${item.leibei}"/></td>
+                    <td><input type="text" class="input6" value="${item.mail}"/></td>
+                    <td><input type="text" class="input7" value="${item.shengfen}"/></td>
                     <td><input type="text" value="删除" class="userDel"/></td>
                     <td><input type="button" value="编辑" class="userEdit"/></td>
                 </tr>`
@@ -160,14 +144,12 @@ jQuery(function($){
                 return `<tr>
                     <td><input type="checkbox" name="check" class="userCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
-                    <td><input type="text" class="input2" value="${item.lianxiren}"/></td>
-                    <td><input type="text" class="input3" value="${item.phone}"/></td>
-                    <td><input type="text" class="input4" value="${item.leibei}"/></td>
-                    <td><input type="text" class="input5" value="${item.mail}"/></td>
-                    <td><input type="text" class="input6" value="${item.dizhi}"/></td>
-                    <td><input type="text" class="input7" value="${item.zhanghao}"/></td>
-                    <td><input type="text" class="input8" value="${item.shengfen}"/></td>
-                    <td><input type="text" class="input9" value="${item. chengshi}"/></td>
+                    <td><input type="text" class="input2" value="${item.phone}"/></td>
+                    <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input4" value="${item.dizhi}"/></td>
+                    <td><input type="text" class="input5" value="${item.leibei}"/></td>
+                    <td><input type="text" class="input6" value="${item.mail}"/></td>
+                    <td><input type="text" class="input7" value="${item.shengfen}"/></td>
                     <td><input type="text" value="删除" class="userDel"/></td>
                     <td><input type="button" value="编辑" class="userEdit"/></td>
                 </tr>`
@@ -185,14 +167,12 @@ jQuery(function($){
                 return `<tr class="table_tr">
                     <td><input type="checkbox" name="check" class="userCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
-                    <td><input type="text" class="input2" value="${item.lianxiren}"/></td>
-                    <td><input type="text" class="input3" value="${item.phone}"/></td>
-                    <td><input type="text" class="input4" value="${item.leibei}"/></td>
-                    <td><input type="text" class="input5" value="${item.mail}"/></td>
-                    <td><input type="text" class="input6" value="${item.dizhi}"/></td>
-                    <td><input type="text" class="input7" value="${item.zhanghao}"/></td>
-                    <td><input type="text" class="input8" value="${item.shengfen}"/></td>
-                    <td><input type="text" class="input9" value="${item. chengshi}"/></td>
+                    <td><input type="text" class="input2" value="${item.phone}"/></td>
+                    <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input4" value="${item.dizhi}"/></td>
+                    <td><input type="text" class="input5" value="${item.leibei}"/></td>
+                    <td><input type="text" class="input6" value="${item.mail}"/></td>
+                    <td><input type="text" class="input7" value="${item.shengfen}"/></td>
                     <td><input type="button" value="删除" class="userDel"/></td>
                     <td><input type="button" value="编辑" class="userEdit"/></td>
                 </tr>`

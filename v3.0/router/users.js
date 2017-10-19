@@ -10,7 +10,7 @@ module.exports = {
             })
         }) 
         app.post("/register", urlencode, function(request, response){
-            db.insert("users",request.body, function(result){
+            db.find("users",request.body, function(result){
                 response.send(result);
             })
         })

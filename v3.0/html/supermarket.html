@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>皇冠超市管理</title>
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/base.css"/>
     <link rel="stylesheet" href="../css/supermarket.css"/>
     <script src="../lib/jquery-3.2.1.min.js"></script>
@@ -41,7 +41,7 @@
                 <li class="receipt">
                     <a href="javascript:;">收货管理</a>
                 </li>
-                <li class="returns">
+                <li class="cancel">
                     <a href="javascript:;">退货管理</a>
                 </li>
                 <li class="putaway">
@@ -70,8 +70,8 @@
                     <a href="javascript:;" id="shou">搜索</a>
                 </div>
                 <div class="table_th">
-                  <table class="table table-bordered table-striped ">
-                      <thead>
+                    <table class="table table-bordered table-striped ">
+                        <thead>
                             <tr>
                                 <th>#</th>
                                 <th>商品名称</th>
@@ -84,11 +84,11 @@
                                 <th>货架编号</th>
                                 <th>采购</th>
                                 <th>删除</th>
-                                <th>修改</th>
+                                <th>编辑</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
-                  </table>
+                    </table>
                 </div>
                 <div class="added">
                     <table class="table table-bordered table-striped added_id">
@@ -103,7 +103,7 @@
                             <th>零售价</th>
                             <th>货架编号</th>
                             <th>采购</th>
-                            <th><button id="colse">关闭</button></th>
+                            <th><input type="button" id="colse" value="关闭"></th>
                         </tr>
                         <tr id="input_ss">
                             <td><input type="checkbox" name="check"></td>
@@ -186,11 +186,10 @@
                                 <th>商品编号(id)</th>
                                 <th>商品图片</th>
                                 <th>厂商地址</th>
-                                <th>库存数量</th>
                                 <th>零售价</th>
                                 <th>货架编号</th>
-                                <th>采购</th>
                                 <th>删除</th>
+                                <th>编辑</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -205,11 +204,9 @@
                             <th>商品编号(id)</th>
                             <th>商品图片</th>
                             <th>厂商地址</th>
-                            <th>库存数量</th>
                             <th>零售价</th>
                             <th>货架编号</th>
-                            <th>采购</th>
-                            <th><button id="colse3">关闭</button></th>
+                            <th><input type="button" id="colse3" value="关闭"></th>
                         </tr>
                         <tr id="input_ss3">
                             <td><input type="checkbox" name="check"></td>
@@ -220,8 +217,6 @@
                             <td><input type="text" class="input5"/></td>
                             <td><input type="text" class="input6"/></td>
                             <td><input type="text" class="input7"/></td>
-                            <td><input type="text" class="input8"/></td>
-                            <td class="Meter"></td>
                             <td><span id="app3">添加</span></td>
                         </tr>
                     </table>
@@ -232,7 +227,7 @@
                         <a href="javascript:;">4</a>
                         <a href="javascript:;">5</a>
                     </div>
-                    <a href="javascript:;">新增商品</a>
+                    <a href="javascript:;" id="btnAdd3">新增库存</a>
                 </div>
             </div>
             <!-- 供应商管理 -->
@@ -247,16 +242,13 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>商品名称</th>
-                                <th>商品条码</th>
-                                <th>商品编号(id)</th>
-                                <th>商品图片</th>
-                                <th>厂商地址</th>
-                                <th>库存数量</th>
-                                <th>零售价</th>
-                                <th>货架编号</th>
-                                <th>采购</th>
+                                <th>供应商单位</th>
+                                <th>供应商地址</th>
+                                <th>联系人</th>
+                                <th>联系号码</th>
+                                <th>邮箱</th>
                                 <th>删除</th>
+                                <th>编辑</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -266,16 +258,12 @@
                     <table class="table table-bordered table-striped added_id4">
                         <tr>
                             <th>#</th>
-                            <th>商品名称</th>
-                            <th>商品条码</th>
-                            <th>商品编号(id)</th>
-                            <th>商品图片</th>
-                            <th>厂商地址</th>
-                            <th>库存数量</th>
-                            <th>零售价</th>
-                            <th>货架编号</th>
-                            <th>采购</th>
-                            <th><button id="colse4">关闭</button></th>
+                            <th>供应商单位</th>
+                            <th>供应商地址</th>
+                            <th>联系人</th>
+                            <th>联系号码</th>
+                            <th>邮箱</th>
+                            <th><input type="button" id="colse4" value="关闭"></th>
                         </tr>
                         <tr id="input_ss4">
                             <td><input type="checkbox" name="check"></td>
@@ -284,10 +272,6 @@
                             <td><input type="text" class="input3"/></td>
                             <td><input type="text" class="input4"/></td>
                             <td><input type="text" class="input5"/></td>
-                            <td><input type="text" class="input6"/></td>
-                            <td><input type="text" class="input7"/></td>
-                            <td><input type="text" class="input8"/></td>
-                            <td class="Meter"></td>
                             <td><span id="app4">添加</span></td>
                         </tr>
                     </table>
@@ -298,7 +282,7 @@
                         <a href="javascript:;">4</a>
                         <a href="javascript:;">5</a>
                     </div>
-                    <a href="javascript:;">新增供应商</a>
+                    <a href="javascript:;" id="btnAdd4">新增供应商</a>
                 </div>
             </div>
             <!-- 收货管理 -->
@@ -341,7 +325,7 @@
                             <th>零售价</th>
                             <th>货架编号</th>
                             <th>采购</th>
-                            <th><button id="colse5">关闭</button></th>
+                            <th><input type="button" id="colse5" value="关闭"></th>
                         </tr>
                         <tr id="input_ss5">
                             <td><input type="checkbox" name="check"></td>
@@ -364,11 +348,10 @@
                         <a href="javascript:;">4</a>
                         <a href="javascript:;">5</a>
                     </div>
-                    <a href="javascript:;">新增收货</a>
                 </div>
             </div>
             <!-- 退货管理 -->
-            <div class="returns_detail">
+            <div class="cancel_detail">
                 <h3>退货明细表</h3>
                 <div class="seek6">
                     <input type="text" placeholder="请输入搜索的商品名称" id="shousuo6"/>
@@ -382,13 +365,12 @@
                                 <th>商品名称</th>
                                 <th>商品条码</th>
                                 <th>商品编号(id)</th>
-                                <th>采购数量</th>
-                                <th>批发价格</th>
-                                <th>总价</th>
-                                <th>收货数量</th>
-                                <th>实付金额</th>
-                                <th>采购</th>
+                                <th>商品图片</th>
+                                <th>厂商地址</th>
+                                <th>零售价</th>
+                                <th>货架编号</th>
                                 <th>删除</th>
+                                <th>编辑</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -403,11 +385,9 @@
                             <th>商品编号(id)</th>
                             <th>商品图片</th>
                             <th>厂商地址</th>
-                            <th>库存数量</th>
                             <th>零售价</th>
                             <th>货架编号</th>
-                            <th>采购</th>
-                            <th><button id="colse6">关闭</button></th>
+                            <th><input type="button" id="colse6" value="关闭"></th>
                         </tr>
                         <tr id="input_ss6">
                             <td><input type="checkbox" name="check"></td>
@@ -418,8 +398,6 @@
                             <td><input type="text" class="input5"/></td>
                             <td><input type="text" class="input6"/></td>
                             <td><input type="text" class="input7"/></td>
-                            <td><input type="text" class="input8"/></td>
-                            <td class="Meter"></td>
                             <td><span id="app6">添加</span></td>
                         </tr>
                     </table>
@@ -430,18 +408,79 @@
                         <a href="javascript:;">4</a>
                         <a href="javascript:;">5</a>
                     </div>
-                    <a href="javascript:;">新增退货</a>
+                    <a href="javascript:;" id="btnAdd6">新增退货</a>
+                </div>
+            </div>
+            <!-- 上架管理 -->
+            <div class="putaway_detail">
+                <h3>上架明细表</h3>
+                <div class="seek7">
+                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo7"/>
+                    <a href="javascript:;" id="shou7">搜索</a>
+                </div>
+                <div class="table_th7">
+                    <table class="table table-bordered table-striped ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>商品名称</th>
+                                <th>商品条码</th>
+                                <th>商品编号(id)</th>
+                                <th>商品图片</th>
+                                <th>厂商地址</th>
+                                <th>零售价</th>
+                                <th>货架编号</th>
+                                <th>删除</th>
+                                <th>编辑</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="added7">
+                    <table class="table table-bordered table-striped added_id7">
+                        <tr>
+                            <th>#</th>
+                            <th>商品名称</th>
+                            <th>商品条码</th>
+                            <th>商品编号(id)</th>
+                            <th>商品图片</th>
+                            <th>厂商地址</th>
+                            <th>零售价</th>
+                            <th>货架编号</th>
+                            <th><input type="button" id="colse7" value="关闭"></th>
+                        </tr>
+                        <tr id="input_ss7">
+                            <td><input type="checkbox" name="check"></td>
+                            <td><input type="text" class="input1"/></td>
+                            <td><input type="text" class="input2"/></td>
+                            <td><input type="text" class="input3"/></td>
+                            <td><input type="text" class="input4"/></td>
+                            <td><input type="text" class="input5"/></td>
+                            <td><input type="text" class="input6"/></td>
+                            <td><input type="text" class="input7"/></td>
+                            <td><span id="app7">添加</span></td>
+                        </tr>
+                    </table>
+                    <div class="page">
+                        <a href="javascript:;">1</a>
+                        <a href="javascript:;">2</a>
+                        <a href="javascript:;">3</a>
+                        <a href="javascript:;">4</a>
+                        <a href="javascript:;">5</a>
+                    </div>
+                    <a href="javascript:;" id="btnAdd7">新增上架</a>
                 </div>
             </div>
             <!-- 收银管理 -->
             <div class="collect_detail">
                 <h3>收银明细表</h3>
-                <div class="seek7">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo7"/>
-                    <a href="javascript:;" id="shou7">搜索</a>
+                <div class="seek8">
+                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo8"/>
+                    <a href="javascript:;" id="shou8">搜索</a>
                 </div>
                 <input type="text" class="form-control" placeholder="扫码。。。" id="QR">
-                <div class="table_th7">
+                <div class="table_th8">
                     <table class="table table-bordered table-striped ">
                         <thead>
                             <tr>
@@ -454,7 +493,7 @@
                                 <th>总价</th>
                                 <!-- <th>收货数量</th>
                                 <th>实付金额</th> -->
-                                <th>修改</th>
+                                <th>编辑</th>
                                 <th>删除</th>
                             </tr>
                         </thead>
@@ -469,30 +508,26 @@
                     <label>客户名称：</label><input type="text" class="input1user  inputuser"/>
                     <label>联系人：</label><input type="text" class="input2user  inputuser"/>
                     <label>电话：</label><input type="text" class="input3user  inputuser"/>
-                    <label>客服类别：</label><input type="text" class="input4user  inputuser"/>
-                    <label>地址:</label><input type="text" class="input5user  inputuser"/>
-                    <label class="labelmail">邮箱:</label><input type="text" class="input6user  inputuser"/>
-                    <label>银行帐号:</label><input type="text" class="input7user  inputuser"/>
-                    <label>身份:</label><input type="text" class="input8user  inputuser"/>
-                    <label>城市:</label><input type="text" class="input9user  inputuser"/>
+                    <label>地址：</label><input type="text" class="input4user  inputuser"/>
+                    <label>客服类别：</label><input type="text" class="input5user  inputuser"/>
+                    <label class="labelmail">邮箱：</label><input type="text" class="input6user  inputuser"/>
+                    <label>身份：</label><input type="text" class="input7user  inputuser"/>
                     <input type="button" value="添加用户" class="button_user">
                 </div>
                 <div class="table_th11">
-                    <table class="table_users">
+                    <table class="table_users table table-bordered table-striped">
                          <thead>
                              <tr>
-                                 <th>选择</th>
-                                 <th>客户名称</th>
-                                 <th>联系人</th>
-                                 <th>电话</th>
-                                 <th>客服类别</th>
-                                 <th>地址</th>
-                                 <th>邮箱</th>
-                                 <th>银行帐号</th>
-                                 <th>身份</th>
-                                 <th>城市</th>
-                                 <th>删除</th>
-                                 <th>编辑</th>
+                                <th>选择</th>
+                                <th>客户名称</th>
+                                <th>电话</th>
+                                <th>联系人</th>
+                                <th>地址</th>
+                                <th>客服类别</th>
+                                <th>邮箱</th>
+                                <th>身份</th>
+                                <th>删除</th>
+                                <th>编辑</th>
                              </tr>
                          </thead>
                          <tbody class="tbody_users"></tbody>
@@ -513,8 +548,12 @@
     </div>
     <script src="../js/supermarket.js"></script>
     <script src="../js/purchase.js"></script>
+    <script src="../js/inventory.js"></script>
+    <script src="../js/supplier.js"></script>
     <script src="../js/receipt.js"></script>
+    <script src="../js/cancel.js"></script>
+    <script src="../js/putaway.js"></script>
     <script src="../js/collect.js"></script>
-    <script src="../js/users.js"></script>
+    <script src="../js/user.js"></script>
 </body>
 </html>

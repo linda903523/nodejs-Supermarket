@@ -1,5 +1,5 @@
+/*------------采购管理-----------*/
 jQuery(function($){
-    // xxxxxxxxxxxxxx采购管理xxxxxxxxxxxxxxxxxxxx
     //添加到采购
     $(document).on('click',function(e){
         if(e.target.tagName.toLowerCase() == 'button'){
@@ -8,9 +8,6 @@ jQuery(function($){
                 response=JSON.parse(response);
                 var seda=response.data;
                 if(response.status){
-                    // alert('采购成功');
-                    console.log(response);
-                    // console.log(seda[0].name)
                     $.post(common.baseUrl + '/pur_create',{
                         name:seda[0].name,
                         tiaoma:seda[0].tiaoma,
@@ -28,63 +25,48 @@ jQuery(function($){
                         response=JSON.parse(response);
                         if(response.status){
                             alert('采购成功');
-                            // console.log(response.data)
                         } else {
                             alert('采购失败');
-
                         }
                     })
                 } else {
                     alert(response.message);
                 }
             })
-            console.log($btn_id);
-        }
-       
+        }       
     })
-    // xxxxxxxxxxxxxx采购管理xxxxxxxxxxxxxxxxxxxx
+
     $('.purchase').on('click',function(){
-        axc();
+        purchase();
     })
-    ////////////////删除////////////////////
+
+    //删除
     $(document).on('click',function(e){
         if($(e.target).attr('class') == 'btnDel_pur'){
-            // $(e.target).
             var $bianhao_id = $(e.target).parent('td').prevAll().eq(6).find('input').val();
-            console.log($bianhao_id);
             $.post(common.baseUrl+'/pur_delete',{id:$bianhao_id},function(response){
-                // console.log(response)
-                response=JSON.parse(response);
-                // console.log(response);
-        
+                response=JSON.parse(response);        
                 if(response.status){
-                        alert('删除成功');
-                        // response.write(response.data);
-                        // window.location.href = 'login.html';
-                        axc();
-                    } else {
-                        alert(response.message);
-                    }
-
+                    alert('删除成功');
+                    purchase();
+                } else {
+                    alert(response.message);
+                }
             })
         }
-        // console.log($(e.target));
     })
+    
     // 提交采购订单
     var $table_th2_p = $('.table_th2>h2>p');
     $table_th2_p.on('click',function(){
         $.post(common.baseUrl + '/pur_search',{},function(response){
             response = JSON.parse(response);
             var listsql = response.data;
-            console.log(listsql);
-
             if(response.status){
                 alert('提交成功');
                 for(var key in listsql){
-                    console.log(listsql[key])
                     $.post(common.baseUrl + '/rec_create',listsql[key],function(response){
                         response=JSON.parse(response);
-                            console.log(response)
                         if(response.status){
                             alert('采购成功');
                         } else {
@@ -97,9 +79,8 @@ jQuery(function($){
             }
         })
     })
-    console.log($table_th2_p);
-    function axc(){
 
+    function purchase(){
         $.post(common.baseUrl + '/pur_search',{},function(response){
             response = JSON.parse(response);
             var listsql = response.data;
@@ -124,7 +105,6 @@ jQuery(function($){
             var $tota_h2=0;
             for(var i=0;i<$tota.length;i++){
                 $tota_h2 += Number($tota.eq(i).html());
-                // console.log($tota_h2);
             }
             $('.table_th2>h2>i').html($tota_h2);
             if(!response.status){

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>qrcode</title>
     <script src="jquery-3.2.1.min.js"></script>
     <script src="jquery-qrcode-0.14.0/jquery-qrcode-0.14.0.min.js"></script>
 </head>
@@ -10,10 +10,10 @@
     <div id="code"></div>
     <script>
         //生成二维码
-        $('#code').qrcode('http://www.baidu.com');
+        $('#code').qrcode('http://10.3.131.26:12/html/print.html');
 
         //识别中文
-        function toUtf8(str) {    
+        /*function toUtf8(str) {    
             var out, i, len, c;    
             out = "";    
             len = str.length;    
@@ -31,7 +31,7 @@
                 }    
             }    
             return out;    
-        } 
+        } */
     </script>
 </body>
 </html>
