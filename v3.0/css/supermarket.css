@@ -21,22 +21,23 @@
 
 /*xxxxxxxxxxxxxxxxxxxxx管理xxxxxxxxxxxxxxxxxxxxxxxx*/
 .detail{float:left; padding-left:20px;width:1100px; display:none;}
+table{border:1px solid #ccc;border-collapse: collapse;width:100%;margin-bottom:20px;}
+td,th{border:1px solid #ccc;padding:0; text-align:center}
+th{padding:0 15px;text-align:center;background-color:#666; color:#fff;}
+tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; outline:none; text-align:center}
+.detail a{font-size:14px;color:skyblue;display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
 
 /*、、、1.产品、、、*/
 .product_detail{padding-top:10px;}
 .product_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.product_detail .productDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.product_detail .productEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.product_detail .productDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.product_detail .productEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek{margin-bottom:30px;}
-.seek a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.table_th table tr th{background-color:#666; color:#fff;}
-.table_th table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
 .Meter meter{width:44px;}
-.Meter button{display:none;}
+.Meter button{display:none;margin-left: 11px;}
 .Meter:hover button{display:block;}
 .Meter:hover meter{display:none;}
 .added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;display:inline-block;margin-right:30px;}
-.added table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app{cursor:pointer;}
 .added_id{display:none;width:959px;}
 
@@ -46,82 +47,57 @@
 .purchase_detail h2{text-align:center;}
 .purchase_detail h2 p{width:200px; margin:20px auto; background-color:#ccc;}
 .purchase_detail h2 p:hover{width:200px; margin:20px auto; background-color:#c15f18; color:#fff; cursor:pointer;}
-.purchase_detail .btnDel_pur{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.purchase_detail .btnDel_pur{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek2{margin-bottom:30px;}
-.seek2 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.table_th2 table tr th{background-color:#666; color:#fff;}
-.table_th2 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
 .added2>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-.added2 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app2{cursor:pointer;}
 .added_id2{display:none;}
 
 /*、、、3.库存、、、*/
 .inventory_detail{padding-top:10px; display:none;}
 .inventory_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.inventory_detail .inventoryDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.inventory_detail .inventoryEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.inventory_detail .inventoryDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.inventory_detail .inventoryEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek3{margin-bottom:30px;}
-.seek3 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.table_th3 table tr th{background-color:#666; color:#fff;}
-.table_th3 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
 .added3>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-.added3 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app3{cursor:pointer;}
 .added_id3{display:none;width:805px;}
 
 /*、、、4.供应商、、、*/
 .supplier_detail{padding-top:10px; display:none;}
 .supplier_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.supplier_detail .supplierDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.supplier_detail .supplierEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.supplier_detail .supplierDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.supplier_detail .supplierEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek4{margin-bottom:30px;}
-.seek4 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.table_th4 table tr th{background-color:#666; color:#fff;}
-.table_th4 table tr td input{border-style:none;width:90px;height:18px;padding:0;outline:none;text-align:center;}
 .table_th4 table tr td input.input5{width:162px;}
 .added4>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-.added4 table tr td input{border-style:none; width:90px; height:18px; padding:0; outline:none; text-align:center;}
-.added4 table tr td input.input5{width:162px;}
 #app4{cursor:pointer;}
 .added_id4{display:none;width:778px;}
 
 /*、、、5.收货、、、*/
 .receipt_detail{padding-top:10px; display:none;}
 .receipt_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.receipt_detail .btnDel_rec{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
+.receipt_detail .btnDel_rec{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek5{margin-bottom:30px;}
-.seek5 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.table_th5 table tr th{background-color:#666; color:#fff;}
-.table_th5 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
 .added5>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-.added5 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app5{cursor:pointer;}
 .added_id5{display:none;}
 
 /*、、、6.退货、、、*/
 .cancel_detail{padding-top:10px; display:none;}
 .cancel_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.seek6 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.cancel_detail .cancelDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.cancel_detail .cancelEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.table_th6 table tr th{background-color:#666; color:#fff;}
-.table_th6 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
+.cancel_detail .cancelDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.cancel_detail .cancelEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .added6>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-.added6 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app6{cursor:pointer;}
 .added_id6{display:none;width:805px;}
 
 /*、、、7.上架、、、*/
 .putaway_detail{padding-top:10px; display:none;}
 .putaway_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.seek7 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.putaway_detail .putawayDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.putaway_detail .putawayEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.table_th7 table tr th{background-color:#666; color:#fff;}
-.table_th7 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
+.putaway_detail .putawayDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.putaway_detail .putawayEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .added7>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-.added7 table tr td input{border-style:none; width:75px; height:18px; padding:0; outline:none; text-align:center;}
 #app7{cursor:pointer;}
 .added_id7{display:none;width:805px;}
 
@@ -129,33 +105,23 @@
 .collect_detail{padding-top:10px; display:none;}
 .collect_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 .seek8{margin-bottom:30px;}
-.seek8 a{display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
-.collect_detail .btnDel_col{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.table_th8 table tr th{background-color:#666; color:#fff;}
-.table_th8 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
+.collect_detail .btnDel_col{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 
 /*、、、11.用户、、、*/
 .user_detail{display:none;}
-.user_detail input{text-align:center;}
 .user_detail p{line-height:25px;overflow:hidden;margin:20px 0;}
-.user_detail p span{display:block;padding:0 10px;float:left;border:1px solid #ddd;margin-right:20px;cursor:pointer;}
+.user_detail p span{display:block;padding:0 10px;float:left;border:1px solid #ddd;margin-right:20px;cursor:pointer;font-size:14px;}
 .user_detail .active{background-color:#89C9E2;color:#ffffff;}
-.user_detail  .table_th11  th{padding:0 15px;text-align:center;}
-.user_detail .table_users{ border:1px solid #ccc;width:100%;border-collapse: collapse;margin-top:20px;}
-.user_detail td,.user_detail th{border:1px solid #ccc;padding:0;}
-.user_detail tbody input{width:90px;border:none;}  
-.user_detail tbody input.input6{width:162px;}        
+.user_detail .table_users{margin-top:20px;}
+.user_detail tbody input.input6,.user_detail tbody input.input7{width:162px;}        
 .user_detail .input10,.user_detail .input11{background-color:#F6AB00;width:50px;margin-left:6px;color:#ffffff;border-radius:20px;}
 .user_detail .input11{background-color:#65A031;}
 .allinput{margin-top:10px;position:relative;}
-.allinput input{line-height:15px;margin-right:18px;width:170px;}
-.allinput label{height:20px;padding-right:10px;}
-.allinput .labelmail{width:66px;}
+.allinput input{line-height:15px;margin-right:31px;width:170px;}
+.allinput label{height:20px;padding-right:10px;font-size:14px;}
 .user_detail .button_user{margin-top:10px;background:#F3E346;border-radius:5px 5px;width:80px;position:absolute;right:40px;}
-.user_detail .userDel{background: #FFC358;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.user_detail .userEdit{background: #89C9E2;width:40px;margin-left:15px;border-radius:40px;color:#fff;}
-.table_th11 table tr th{background-color:#666; color:#fff;}
-.table_th11 table tr td input{border-style:none;width:75px;height:18px;padding:0;outline:none;text-align:center;}
+.user_detail .userDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.user_detail .userEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 
 /*、、、登录、、、*/
 .login{border:1px solid #ddd; width:400px; height:250px; position:absolute; top:150px; left:500px;}

@@ -12,8 +12,8 @@ jQuery(function($){
             lianxiren:$('.input3user').val(),
             dizhi:$('.input4user').val(),
             leibei:$('.input5user').val(),
-            mail:$('.input6user').val(),
-            shengfen:$('.input7user').val()
+            shengfen:$('.input6user').val(),
+            mail:$('.input7user').val()
         },function(response){
             response = JSON.parse(response);
             if(response.status){
@@ -34,8 +34,8 @@ jQuery(function($){
             var $lianxiren = $(e.target).parent().prevAll().find('.input3').val();
             var $dizhi = $(e.target).parent().prevAll().find('.input4').val();
             var $leibei = $(e.target).parent().prevAll().find('.input5').val();
-            var $mail = $(e.target).parent().prevAll().find('.input6').val();
-            var $shengfen = $(e.target).parent().prevAll().find('.input7').val();
+            var $shengfen = $(e.target).parent().prevAll().find('.input6').val();
+            var $mail = $(e.target).parent().prevAll().find('.input7').val();
 
             $.post(common.baseUrl + '/user_delete',{
                 name:$name,
@@ -43,8 +43,8 @@ jQuery(function($){
                 lianxiren:$lianxiren,
                 dizhi:$dizhi,
                 leibei:$leibei,
-                mail:$mail,
-                shengfen:$shengfen
+                shengfen:$shengfen,
+                mail:$mail
             },function(response){
                 response=JSON.parse(response);
                 if(response.status){
@@ -92,16 +92,16 @@ jQuery(function($){
                         lianxiren:va3,
                         dizhi:va4,
                         leibei:va5,
-                        mail:va6,
-                        shengfen:va7
+                        shengfen:va6,
+                        mail:va7
                     }),lists:JSON.stringify({
                         name:va11,
                         phone:va12,
                         lianxiren:va13,
                         dizhi:va14,
                         leibei:va15,
-                        mail:va16,
-                        shengfen:va17
+                        shengfen:va16,
+                        mail:va17
                     })},function(response){
                         $('.tbody_users').find(':checkbox').prop('checked',false);
                 })
@@ -123,8 +123,8 @@ jQuery(function($){
                     <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
                     <td><input type="text" class="input4" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input5" value="${item.leibei}"/></td>
-                    <td><input type="text" class="input6" value="${item.mail}"/></td>
-                    <td><input type="text" class="input7" value="${item.shengfen}"/></td>
+                    <td><input type="text" class="input6" value="${item.shengfen}"/></td>
+                    <td><input type="text" class="input7" value="${item.mail}"/></td>
                     <td><input type="text" value="删除" class="userDel"/></td>
                     <td><input type="button" value="编辑" class="userEdit"/></td>
                 </tr>`
@@ -148,8 +148,8 @@ jQuery(function($){
                     <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
                     <td><input type="text" class="input4" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input5" value="${item.leibei}"/></td>
-                    <td><input type="text" class="input6" value="${item.mail}"/></td>
-                    <td><input type="text" class="input7" value="${item.shengfen}"/></td>
+                    <td><input type="text" class="input6" value="${item.shengfen}"/></td>
+                    <td><input type="text" class="input7" value="${item.mail}"/></td>
                     <td><input type="text" value="删除" class="userDel"/></td>
                     <td><input type="button" value="编辑" class="userEdit"/></td>
                 </tr>`
@@ -171,8 +171,8 @@ jQuery(function($){
                     <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
                     <td><input type="text" class="input4" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input5" value="${item.leibei}"/></td>
-                    <td><input type="text" class="input6" value="${item.mail}"/></td>
-                    <td><input type="text" class="input7" value="${item.shengfen}"/></td>
+                    <td><input type="text" class="input6" value="${item.shengfen}"/></td>
+                    <td><input type="text" class="input7" value="${item.mail}"/></td>
                     <td><input type="button" value="删除" class="userDel"/></td>
                     <td><input type="button" value="编辑" class="userEdit"/></td>
                 </tr>`

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <title>皇冠超市管理</title>
-    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/base.css"/>
     <link rel="stylesheet" href="../css/supermarket.css"/>
     <script src="../lib/jquery-3.2.1.min.js"></script>
@@ -70,7 +69,7 @@
                     <a href="javascript:;" id="shou">搜索</a>
                 </div>
                 <div class="table_th">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -91,7 +90,7 @@
                     </table>
                 </div>
                 <div class="added">
-                    <table class="table table-bordered table-striped added_id">
+                    <table class="added_id">
                         <tr>
                             <th>#</th>
                             <th>商品名称</th>
@@ -137,7 +136,7 @@
                     <a href="javascript:;" id="shou2">搜索</a>
                 </div>
                 <div class="table_th2">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -177,7 +176,7 @@
                     <a href="javascript:;" id="shou3">搜索</a>
                 </div>
                 <div class="table_th3">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -196,7 +195,7 @@
                     </table>
                 </div>
                 <div class="added3">
-                    <table class="table table-bordered table-striped added_id3">
+                    <table class="added_id3">
                         <tr>
                             <th>#</th>
                             <th>商品名称</th>
@@ -238,7 +237,7 @@
                     <a href="javascript:;" id="shou4">搜索</a>
                 </div>
                 <div class="table_th4">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -255,7 +254,7 @@
                     </table>
                 </div>
                 <div class="added4">
-                    <table class="table table-bordered table-striped added_id4">
+                    <table class="added_id4">
                         <tr>
                             <th>#</th>
                             <th>供应商单位</th>
@@ -293,7 +292,7 @@
                     <a href="javascript:;" id="shou5">搜索</a>
                 </div>
                 <div class="table_th5">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -313,7 +312,7 @@
                     </table>
                 </div>
                 <div class="added5">
-                    <table class="table table-bordered table-striped added_id5">
+                    <table class="added_id5">
                         <tr>
                             <th>#</th>
                             <th>商品名称</th>
@@ -358,7 +357,7 @@
                     <a href="javascript:;" id="shou6">搜索</a>
                 </div>
                 <div class="table_th6">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -377,7 +376,7 @@
                     </table>
                 </div>
                 <div class="added6">
-                    <table class="table table-bordered table-striped added_id6">
+                    <table class="added_id6">
                         <tr>
                             <th>#</th>
                             <th>商品名称</th>
@@ -419,7 +418,7 @@
                     <a href="javascript:;" id="shou7">搜索</a>
                 </div>
                 <div class="table_th7">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -438,7 +437,7 @@
                     </table>
                 </div>
                 <div class="added7">
-                    <table class="table table-bordered table-striped added_id7">
+                    <table class="added_id7">
                         <tr>
                             <th>#</th>
                             <th>商品名称</th>
@@ -481,7 +480,7 @@
                 </div>
                 <input type="text" class="form-control" placeholder="扫码。。。" id="QR">
                 <div class="table_th8">
-                    <table class="table table-bordered table-striped ">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -501,6 +500,9 @@
                     </table>
                 </div>
             </div>
+            <div class="authority_detail">
+                
+            </div>
             <!-- 用户管理 -->
             <div class="user_detail">
                 <p><span class="huiyuan">普通会员</span><span class="vip">vip会员</span></p>
@@ -510,12 +512,12 @@
                     <label>电话：</label><input type="text" class="input3user  inputuser"/>
                     <label>地址：</label><input type="text" class="input4user  inputuser"/>
                     <label>客服类别：</label><input type="text" class="input5user  inputuser"/>
-                    <label class="labelmail">邮箱：</label><input type="text" class="input6user  inputuser"/>
-                    <label>身份：</label><input type="text" class="input7user  inputuser"/>
+                    <label>身份证：</label><input type="text" class="input6user  inputuser"/>
+                    <label>邮箱：</label><input type="text" class="input7user  inputuser"/>
                     <input type="button" value="添加用户" class="button_user">
                 </div>
                 <div class="table_th11">
-                    <table class="table_users table table-bordered table-striped">
+                    <table class="table_users">
                          <thead>
                              <tr>
                                 <th>选择</th>
@@ -524,8 +526,8 @@
                                 <th>联系人</th>
                                 <th>地址</th>
                                 <th>客服类别</th>
+                                <th>身份证</th>
                                 <th>邮箱</th>
-                                <th>身份</th>
                                 <th>删除</th>
                                 <th>编辑</th>
                              </tr>
