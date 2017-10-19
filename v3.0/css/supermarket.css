@@ -15,17 +15,17 @@
 .manage ul li a{height:50px; color:#fff; line-height:50px; text-align:center; background-color:#6071B6; border-radius:5px 0 0 5px/5px 0 0 5px; }
 .manage ul li a:hover{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; text-decoration:none;}
 .manage ul .active{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
-.page{ float:right;}
-.page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
-.page>a:hover{border:1px solid #f15c18; color:#f15C18; text-decoration:none;}
 
-/*xxxxxxxxxxxxxxxxxxxxx管理xxxxxxxxxxxxxxxxxxxxxxxx*/
+/*xxxxxxxxxxxxxxxxxxxxx模块管理xxxxxxxxxxxxxxxxxxxxxxxx*/
 .detail{float:left; padding-left:20px;width:1100px; display:none;}
 table{border:1px solid #ccc;border-collapse: collapse;width:100%;margin-bottom:20px;}
 td,th{border:1px solid #ccc;padding:0; text-align:center}
 th{padding:0 15px;text-align:center;background-color:#666; color:#fff;}
 tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; outline:none; text-align:center}
-.detail a{font-size:14px;color:skyblue;display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
+.detail a{color:skyblue;display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
+.page{ float:right;}
+.page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
+.page>a:hover{border:1px solid #f15c18; color:#f15C18; text-decoration:none;}
 
 /*、、、1.产品、、、*/
 .product_detail{padding-top:10px;}
@@ -104,8 +104,27 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 /*、、、8.收银、、、*/
 .collect_detail{padding-top:10px; display:none;}
 .collect_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.seek8{margin-bottom:30px;}
 .collect_detail .btnDel_col{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.collect_detail .btnEdit_col{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+#btnAdd8{font-size: 30px;color:#fff;background:skyblue;width:200px;}
+
+/* ------------二维码------------ */
+.erweima{display:none;position:relative;}
+.erweima img{margin:0px auto;}
+.erweima span{font-size:30px; position:absolute; top:-20px; right:400px; width:30px; height:30px; border-radius:50%; line-height:30px; text-align:center;}
+.erweima span:hover{ background-color:#c15f18; color:#fff; cursor:pointer;}
+
+/*、、、9.小票、、、*/
+.print_detail{display:none;overflow:hidden;}
+.print_detail h3{background:#FFBA00;width:180px;line-height:30px;text-align:center;color:#ffffff;border-radius:10px;margin:20px 0;cursor:pointer;}
+.print_detail .moneytable { border:1px solid #ccc;border-collapse: collapse;margin-top:20px;}
+.print_detail .moneytable th{width:40px;text-align:center;}
+.print_detail td,.print_detail th{border:1px solid #ccc;padding:0;}
+.print_detail input{border:none;text-align:center;width:150px;}
+.print_detail .jisuan span{display:block;float:left;}
+.print_detail .jisuan .zongnmber{padding-right:10px;}
+.print_detail p{overflow:hidden;width:605px;text-align:right;}
+.print_detail time{padding-left:20px;}
 
 /*、、、11.用户、、、*/
 .user_detail{display:none;}

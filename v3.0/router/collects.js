@@ -11,18 +11,17 @@ module.exports = {
         })
         app.post("/col_search",urlencode,function(request, response){
             db.select('collect',request.body,function(result){
-                // console.log(result);
                 response.send(result);            
             })
         })
         app.post("/col_delete",urlencode,function(request, response){
             db.delete('collect',request.body,function(result){
-                // console.log(result);
                 response.send(result);
             })
         })
         app.post("/col_update",urlencode,function(request, response){
             db.update('collect',request.body,function(result){
+                console.log(result)
                 response.send(result);            
             })
         })

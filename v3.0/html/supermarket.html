@@ -474,10 +474,6 @@
             <!-- 收银管理 -->
             <div class="collect_detail">
                 <h3>收银明细表</h3>
-                <div class="seek8">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo8"/>
-                    <a href="javascript:;" id="shou8">搜索</a>
-                </div>
                 <input type="text" class="form-control" placeholder="扫码。。。" id="QR">
                 <div class="table_th8">
                     <table>
@@ -490,19 +486,39 @@
                                 <th>数量</th>
                                 <th>零售价格</th>
                                 <th>总价</th>
-                                <!-- <th>收货数量</th>
-                                <th>实付金额</th> -->
-                                <th>编辑</th>
                                 <th>删除</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
                     </table>
                 </div>
+                <a href="javascript:;" id="btnAdd8">结算</a>
+                <div class="erweima">
+                    <!-- <img src="../img/w.bmp"> -->
+                    <span>&times;</span>
+                </div>
             </div>
-            <div class="authority_detail">
-                
+            <!-- 小票打印-->
+            <div class="print_detail">
+                <div class="xiaopiao">
+                    <h3 class="printcui">打印商品</h3>
+                    <table class="moneytable">
+                        <thead class="money_thead">
+                            <tr>
+                                <th>商品名称</th>
+                                <th>产品条码</th>
+                                <th>数量</th>
+                                <th>价格</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mongytbody"></tbody>
+                    </table>
+                    <p class="jisuan"><span>总数量：</span><span class="zongnmber"></span><span>总价：</span><span class="moneynumber"></span></p>
+                    <div class="time"><span>买单时间：</span><span id="time"></span></div>
+                </div>
             </div>
+            <!-- 权限管理-->
+            <div class="authority_detail"></div>
             <!-- 用户管理 -->
             <div class="user_detail">
                 <p><span class="huiyuan">普通会员</span><span class="vip">vip会员</span></p>
@@ -556,6 +572,7 @@
     <script src="../js/cancel.js"></script>
     <script src="../js/putaway.js"></script>
     <script src="../js/collect.js"></script>
+    <script src="../js/print.js"></script>
     <script src="../js/user.js"></script>
 </body>
 </html>
