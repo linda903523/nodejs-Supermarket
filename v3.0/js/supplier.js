@@ -140,7 +140,13 @@ jQuery(function($){
                         number:va14,
                         mail:va15
                     })},function(response){
-                        $('.table_th4').find(':checkbox').prop('checked',false);
+                        response=JSON.parse(response);
+                        if(response.status){
+                            $('.table_th4').find(':checkbox').prop('checked',false);
+                            alert('编辑成功');
+                        } else {
+                            alert(response.message);
+                        }
                 })
             })
         })

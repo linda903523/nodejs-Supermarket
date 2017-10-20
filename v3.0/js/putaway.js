@@ -155,7 +155,13 @@ jQuery(function($){
                         shoujia:va16,
                         bianhao:va17
                     })},function(response){
-                        $('.table_th7').find(':checkbox').prop('checked',false);
+                        response=JSON.parse(response);
+                        if(response.status){
+                            $('.table_th7').find(':checkbox').prop('checked',false);
+                            alert('编辑成功');
+                        } else {
+                            alert(response.message);
+                        }
                 })
             })
         })

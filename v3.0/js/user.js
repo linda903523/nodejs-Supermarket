@@ -103,7 +103,13 @@ jQuery(function($){
                         shengfen:va16,
                         mail:va17
                     })},function(response){
-                        $('.tbody_users').find(':checkbox').prop('checked',false);
+                        response=JSON.parse(response);
+                        if(response.status){
+                            $('.tbody_users').find(':checkbox').prop('checked',false);
+                            alert('编辑成功');
+                        } else {
+                            alert(response.message);
+                        }
                 })
             })
         })

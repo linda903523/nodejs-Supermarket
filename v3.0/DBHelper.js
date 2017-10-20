@@ -35,6 +35,7 @@ module.exports = {
         });
     },
     update:function(_collection,_data,_callback){
+        console.log(_data)
         var i = db.collection(_collection).update(JSON.parse(_data.lists),JSON.parse(_data.goods)).then(function(result){
             _callback(apiResult(true));
         });

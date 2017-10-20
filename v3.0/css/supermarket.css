@@ -37,7 +37,7 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .product_detail .productEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek{margin-bottom:30px;}
 .Meter meter{width:44px;}
-.Meter button{display:none;margin-left: 11px;}
+.Meter button{display:none;margin-left: 7px;}
 .Meter:hover button{display:block;}
 .Meter:hover meter{display:none;}
 .added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;display:inline-block;margin-right:30px;}

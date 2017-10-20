@@ -162,7 +162,13 @@ jQuery(function($){
                         shoujia:va17,
                         bianhao:va18
                     })},function(response){
-                        $('.table_th').find(':checkbox').prop('checked',false);
+                        response=JSON.parse(response);
+                        if(response.status){
+                            $('.table_th').find(':checkbox').prop('checked',false);
+                            alert('编辑成功');
+                        } else {
+                            alert(response.message);
+                        }
                 })
             })
         })
