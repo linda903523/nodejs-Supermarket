@@ -3,7 +3,7 @@ jQuery(function($){
     //添加到采购
     $(document).on('click',function(e){
         if(e.target.tagName.toLowerCase() == 'button'){
-            var $btn_id=$(e.target).attr('class')
+            var $btn_id=$(e.target).attr('class');
             $.post(common.baseUrl + '/search',{id:$btn_id},function(response){
                 response=JSON.parse(response);
                 var seda=response.data;
@@ -68,7 +68,7 @@ jQuery(function($){
                     $.post(common.baseUrl + '/rec_create',listsql[key],function(response){
                         response=JSON.parse(response);
                         if(response.status){
-                            alert('采购成功');
+                            //alert('采购成功');
                         } else {
                             alert('采购失败');
                         }

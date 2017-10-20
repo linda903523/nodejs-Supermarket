@@ -54,16 +54,6 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 #app2{cursor:pointer;}
 .added_id2{display:none;}
 
-/*、、、3.库存、、、*/
-.inventory_detail{padding-top:10px; display:none;}
-.inventory_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
-.inventory_detail .inventoryDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
-.inventory_detail .inventoryEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
-.seek3{margin-bottom:30px;}
-.added3>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-#app3{cursor:pointer;}
-.added_id3{display:none;width:864px;}
-
 /*、、、4.供应商、、、*/
 .supplier_detail{padding-top:10px; display:none;}
 .supplier_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}

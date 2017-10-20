@@ -49,6 +49,7 @@ jQuery(function($){
         })
     })
     function print(){
+        $('.complete').hide();
         $.post(common.baseUrl + '/col_search',{},function(response){
             response = JSON.parse(response);
             listsql = response.data;
@@ -82,7 +83,7 @@ jQuery(function($){
     ws = new WebSocket("ws://10.3.131.14:888");
     ws.onmessage = function(_msg){
         console.log(_msg.data);
-        $('.complete').html(_msg.data);
+        $('.complete').show().html(_msg.data);
         $('.erweima').hide();
     } 
 })

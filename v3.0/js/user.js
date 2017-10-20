@@ -8,8 +8,8 @@ jQuery(function($){
     $('.button_user').click(function(){
         $.post(common.baseUrl + '/register',{
             name:$('.input1user').val(),
-            phone:$('.input2user').val(),
-            lianxiren:$('.input3user').val(),
+            lianxiren:$('.input2user').val(),
+            phone:$('.input3user').val(),
             dizhi:$('.input4user').val(),
             leibei:$('.input5user').val(),
             shengfen:$('.input6user').val(),
@@ -30,8 +30,8 @@ jQuery(function($){
     $(document).on('click',function(e){
         if($(e.target).attr('class') == 'userDel'){
             var $name = $(e.target).parent().prevAll().find('.input1').val();
-            var $phone = $(e.target).parent().prevAll().find('.input2').val();
-            var $lianxiren = $(e.target).parent().prevAll().find('.input3').val();
+            var $lianxiren = $(e.target).parent().prevAll().find('.input2').val();
+            var $phone = $(e.target).parent().prevAll().find('.input3').val();
             var $dizhi = $(e.target).parent().prevAll().find('.input4').val();
             var $leibei = $(e.target).parent().prevAll().find('.input5').val();
             var $shengfen = $(e.target).parent().prevAll().find('.input6').val();
@@ -39,8 +39,8 @@ jQuery(function($){
 
             $.post(common.baseUrl + '/user_delete',{
                 name:$name,
-                phone:$phone,
                 lianxiren:$lianxiren,
+                phone:$phone,
                 dizhi:$dizhi,
                 leibei:$leibei,
                 shengfen:$shengfen,
@@ -88,16 +88,16 @@ jQuery(function($){
                 $.post(common.baseUrl + '/user_updata',{
                     goods:JSON.stringify({
                         name:va1,
-                        phone:va2,
-                        lianxiren:va3,
+                        lianxiren:va2,
+                        phone:va3,
                         dizhi:va4,
                         leibei:va5,
                         shengfen:va6,
                         mail:va7
                     }),lists:JSON.stringify({
                         name:va11,
-                        phone:va12,
-                        lianxiren:va13,
+                        lianxiren:va12,
+                        phone:va13,
                         dizhi:va14,
                         leibei:va15,
                         shengfen:va16,
@@ -119,8 +119,8 @@ jQuery(function($){
                 return `<tr>
                     <td><input type="checkbox" name="check" class="userCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
-                    <td><input type="text" class="input2" value="${item.phone}"/></td>
-                    <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input2" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input3" value="${item.phone}"/></td>
                     <td><input type="text" class="input4" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input5" value="${item.leibei}"/></td>
                     <td><input type="text" class="input6" value="${item.shengfen}"/></td>
@@ -144,8 +144,8 @@ jQuery(function($){
                 return `<tr>
                     <td><input type="checkbox" name="check" class="userCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
-                    <td><input type="text" class="input2" value="${item.phone}"/></td>
-                    <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input2" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input3" value="${item.phone}"/></td>
                     <td><input type="text" class="input4" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input5" value="${item.leibei}"/></td>
                     <td><input type="text" class="input6" value="${item.shengfen}"/></td>
@@ -167,8 +167,8 @@ jQuery(function($){
                 return `<tr class="table_tr">
                     <td><input type="checkbox" name="check" class="userCheck"></td>
                     <td><input type="text" class="input1" value="${item.name}"/></td>
-                    <td><input type="text" class="input2" value="${item.phone}"/></td>
-                    <td><input type="text" class="input3" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input2" value="${item.lianxiren}"/></td>
+                    <td><input type="text" class="input3" value="${item.phone}"/></td>
                     <td><input type="text" class="input4" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input5" value="${item.leibei}"/></td>
                     <td><input type="text" class="input6" value="${item.shengfen}"/></td>

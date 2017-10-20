@@ -3,7 +3,7 @@ var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 var db;
 
-MongoClient.connect("mongodb://localhost:27017/cuicui", function(err, database) {
+MongoClient.connect("mongodb://10.3.131.14:27017/cuicui", function(err, database) {
     if(err) throw err;
     db = database;
 });
