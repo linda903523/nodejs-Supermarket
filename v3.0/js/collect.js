@@ -28,16 +28,8 @@ jQuery(function($){
         }
     })
 
-    var qtys = [];
-    $(document).on('keydown',function(e){  
-        var qty=0;     
+    $(document).on('keydown',function(e){    
         if(e.keyCode == 13){
-            var qr=$('#QR').val()
-            qtys.push(qr);
-            for(var i=0;i<qtys.length;i++){
-                if(qtys[i] == String(qr)){
-                }
-            }
             $.post(common.baseUrl + '/search',{tiaoma:$('#QR').val()},function(response){
                 response = JSON.parse(response);
                 var list_col = response.data;
