@@ -1,23 +1,25 @@
+.container{width:1295px;margin:0 auto;}
 .head{background-color:#196EC4; position:relative; border-radius:5px 5px;}
-.head h1{color:#fff; padding-left:30px; line-height:50px;}
+.head h1{color:#fff;line-height:60px;height: 60px;}
+.head h1 i{padding:0 10px; color:yellow;}
 .head>span{position:absolute; top:-8px; right:0px; font-size:30px;}
-.head span:hover{color:#f15c18; cursor:pointer;}
+.head>span:hover{color:#f15c18; cursor:pointer;}
 .register{position:absolute; top:0px; right:60px;}
-.register span{float:left; font-size:16px; padding:0 15px; line-height:30px; color:#fff;}
+.register span{float:left; font-size:16px; padding:0 15px; line-height:30px; color:#fff;cursor:pointer;}
+.register a{color:#fff;text-decoration: none;}
 
 .nav{position:relative; margin-top:20px;}
-.nav h3{background-color:#196EC4; padding-left:50px; border-radius:5px 5px; box-shadow:0px 4px 7px -4px inset; line-height:30px;color:#fff;background:#64A1EB;}
+.nav h3{background-color:#196EC4;border-radius:5px 5px; box-shadow:0px 4px 7px -4px inset; line-height:30px;color:#fff;background:#64A1EB;padding-left: 35px;}
 .nav span{position:absolute; right:0px; top:-8px; font-size:30px;}
 .nav span:hover{color:#f15c18; cursor:pointer;}
 
 .manage{float:left;}
-.manage ul{width:160px; padding-left:40px; background-color:#859DDD; height:800px;}
+.manage ul{width:160px;height:800px;}
 .manage ul li a{height:50px; color:#fff; line-height:50px; text-align:center; background-color:#6071B6; border-radius:5px 0 0 5px/5px 0 0 5px; }
-.manage ul li a:hover{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; text-decoration:none;}
-.manage ul .active{height:50px; color:#000; line-height:50px; text-align:center; background-color:#fff; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
+.manage ul .active{height:50px;line-height:50px; text-align:center; background-color:#89C9E2; border-radius:5px 0 0 5px/5px 0 0 5px; text-decoration:none;}
 
 /*xxxxxxxxxxxxxxxxxxxxx模块管理xxxxxxxxxxxxxxxxxxxxxxxx*/
-.detail{float:left; padding-left:20px;width:1100px; display:none;}
+.detail{float:left; padding-left:20px;width:1100px;}
 table{border:1px solid #ccc;border-collapse: collapse;width:100%;margin-bottom:20px;}
 td,th{border:1px solid #ccc;padding:0; text-align:center}
 th{padding:0 15px;text-align:center;background-color:#666; color:#fff;height:30px;}
@@ -41,6 +43,7 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;display:inline-block;margin-right:30px;}
 #app{cursor:pointer;}
 .added_id{display:none;width:959px;}
+#input_ss input.input2,.table_th table tr td input.input2{width:130px;}
 
 /*、、、2.采购、、、*/
 .purchase_detail{padding-top:10px; display:none;}
@@ -133,11 +136,3 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .user_detail .button_user{margin-top:10px;background:#F3E346;border-radius:5px 5px;width:80px;position:absolute;right:40px;}
 .user_detail .userDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .user_detail .userEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
-
-/*、、、登录、、、*/
-.login{border:1px solid #ddd; width:400px; height:250px; position:absolute; top:150px; left:500px;}
-.login h3{background-color:skyblue; line-height:50px;}
-.login h3 i{padding:0 10px; color:yellow;}
-.login_input p{padding:20px 0 0 80px;}
-.login_input #btnLogin{margin:30px 0 0 120px;}
-.login_input #btnExit{margin:30px 0 0 20px;}

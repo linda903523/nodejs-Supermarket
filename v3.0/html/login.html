@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <style>
+        .login{border:1px solid #ddd; width:400px; height:250px;margin:150px auto;}
+        .login h3{background-color:skyblue; line-height:50px;margin-top:0;}
+        .login h3 i{padding:0 10px; color:yellow;}
+        .login_input p{padding:20px 0 0 80px;}
+        .login_input #btnLogin{margin:30px 0 0 120px;}
+        .login_input #btnExit{margin:30px 0 0 20px;}
+        a{color:inherit;}
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h3><i class="glyphicon glyphicon-king"></i>皇冠超市管理系统登录</h3>
+        <div class="login_input">
+            <p>帐号：<input type="text" id="username" /></p>
+            <p>密码：<input type="password" id="password" /></p>
+            <a target="_blank" href="http://10.3.131.14:12/html/supermarket.html"><input type="button" value="登录" id="btnLogin"></a>
+            <input type="button" value="取消" id="btnExit">
+        </div>
+    </div>
+    <script>
+        /*jQuery(function($){
+            //取消登录
+            $('#btnExit').click(function(){
+                $('.login').hide();
+            })
+
+            //登录
+            $('#btnLogin').click(function(){
+                $.post(common.baseUrl + '/login',{
+                    username:$('#username').val(),
+                    password:$('#password').val()
+                },function(response){
+                    response=JSON.parse(response);
+                    if(response.status){
+                        alert('登录成功');*/
+                        $('.login').hide();
+                        $('.detail').show();
+                    /*} else {
+                        alert(response.message);
+                    }
+                })
+            })
+        })*/
+    </script>
+</body>
+</html>

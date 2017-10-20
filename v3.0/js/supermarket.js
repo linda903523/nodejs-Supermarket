@@ -1,31 +1,4 @@
 jQuery(function($){
-    /*//显示登录框
-    $('#login').click(function(){
-        $('.login').show();
-    })
-
-    //取消登录
-    $('#btnExit').click(function(){
-        $('.login').hide();
-    })
-
-    //登录
-    $('#btnLogin').click(function(){
-        $.post(common.baseUrl + '/login',{
-            username:$('#username').val(),
-            password:$('#password').val()
-        },function(response){
-            response=JSON.parse(response);
-            if(response.status){
-                alert('登录成功');*/
-                $('.login').hide();
-                $('.detail').show();
-            /*} else {
-                alert(response.message);
-            }
-        })
-    })*/
-
     //导航条：点击模块出现相应的数据表
     var $manage_a = $('.manage>ul>li>a');
     for(let i=0;i<$manage_a.length;i++){

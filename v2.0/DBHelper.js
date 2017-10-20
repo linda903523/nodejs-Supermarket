@@ -5,6 +5,8 @@ var db = new mongodb.Db('cuicui', dbServer);
 
 module.exports = {
     insert:function(_collection,_data,_callback){
+        //操作数据库
+        //打开db
         db.open(function(error,db){
             if(error){
                 _callback(apiResult(false,null,error));
@@ -15,12 +17,13 @@ module.exports = {
                         _callback(apiResult(false,null,error));
                         return false;
                     }else{
-                        console.log(_data);
+                        //插入数据
                         collection.insert(_data);
                         _callback(apiResult(true));
                     }
                 })                
             }
+            //关闭db
             db.close();
         })
     },

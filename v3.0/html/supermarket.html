@@ -11,67 +11,88 @@
     <script src="../js/common.js"></script>
 </head>
 <body>
-    <div id="header">
-        <div class="head">
-            <h1>皇冠超市管理系统</h1>
-            <div class="register">
-                <span id="login">登录</span>
-                <span id="exit">退出</span>
+    <div class="container">
+        <div id="header">
+            <div class="head">
+                <h1><i class="glyphicon glyphicon-king"></i>皇冠超市管理系统</h1>
+                <div class="register">
+                    <span id="login">已登录</span>
+                    <span id="exit"><a target="_blank" href="http://10.3.131.14:12/html/login.html">退出</a></span>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="main">
-        <div class="nav">
-            <h3>导航窗口</h3>
-            <span>&times;</span>
-        </div>
-        <div class="manage">
-            <ul>                
-                <li class="product">
-                    <a href="javascript:;">产品管理</a>
-                </li>
-                <li class="purchase">
-                    <a href="javascript:;">采购管理</a>
-                </li>
-                <li class="supplier">
-                    <a href="javascript:;">供应商管理</a>
-                </li>
-                <li class="receipt">
-                    <a href="javascript:;">收货管理</a>
-                </li>
-                <li class="cancel">
-                    <a href="javascript:;">退货管理</a>
-                </li>
-                <li class="putaway">
-                    <a href="javascript:;">上架管理</a>
-                </li>
-                <li class="collect">
-                    <a href="javascript:;">收银管理</a>
-                </li>
-                <li class="print">
-                    <a href="javascript:;">小票打印</a>
-                </li>
-                <li class="authority">
-                    <a href="javascript:;">权限管理</a>
-                </li>
-                <li class="user">
-                    <a href="javascript:;">用户管理</a>
-                </li>
-            </ul>
-        </div>
-        <div class="detail">
-            <!-- 产品管理 -->
-            <div class="product_detail">
-                <h3>商品库明细表</h3>
-                <div class="seek">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo"/>
-                    <a href="javascript:;" id="shou">搜索</a>
-                </div>
-                <div class="table_th">
-                    <table>
-                        <thead>
+        <div id="main">
+            <div class="nav">
+                <h3>导航窗口</h3>
+                <span>&times;</span>
+            </div>
+            <div class="manage">
+                <ul>                
+                    <li class="product">
+                        <a href="javascript:;">产品管理</a>
+                    </li>
+                    <li class="purchase">
+                        <a href="javascript:;">采购管理</a>
+                    </li>
+                    <li class="supplier">
+                        <a href="javascript:;">供应商管理</a>
+                    </li>
+                    <li class="receipt">
+                        <a href="javascript:;">收货管理</a>
+                    </li>
+                    <li class="cancel">
+                        <a href="javascript:;">退货管理</a>
+                    </li>
+                    <li class="putaway">
+                        <a href="javascript:;">上架管理</a>
+                    </li>
+                    <li class="collect">
+                        <a href="javascript:;">收银管理</a>
+                    </li>
+                    <li class="print">
+                        <a href="javascript:;">小票打印</a>
+                    </li>
+                    <li class="authority">
+                        <a href="javascript:;">权限管理</a>
+                    </li>
+                    <li class="user">
+                        <a href="javascript:;">用户管理</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="detail">
+                <!-- 产品管理 -->
+                <div class="product_detail">
+                    <h3>商品库明细表</h3>
+                    <div class="seek">
+                        <input type="text" placeholder="请输入搜索的商品名称" id="shousuo"/>
+                        <a href="javascript:;" id="shou">搜索</a>
+                    </div>
+                    <div class="table_th">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>商品编号(id)</th>
+                                    <th>商品图片</th>
+                                    <th>厂商地址</th>
+                                    <th>库存数量</th>
+                                    <th>零售价</th>
+                                    <th>货架编号</th>
+                                    <th>采购</th>
+                                    <th>删除</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="added">
+                        <table class="added_id">
                             <tr>
-                                <th>#</th>
+                                <th>选择</th>
                                 <th>商品名称</th>
                                 <th>商品条码</th>
                                 <th>商品编号(id)</th>
@@ -80,424 +101,395 @@
                                 <th>库存数量</th>
                                 <th>零售价</th>
                                 <th>货架编号</th>
-                                <th>采购</th>
-                                <th>删除</th>
-                                <th>编辑</th>
+                                <th><input type="button" id="colse" value="关闭"></th>
                             </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div class="added">
-                    <table class="added_id">
-                        <tr>
-                            <th>#</th>
-                            <th>商品名称</th>
-                            <th>商品条码</th>
-                            <th>商品编号(id)</th>
-                            <th>商品图片</th>
-                            <th>厂商地址</th>
-                            <th>库存数量</th>
-                            <th>零售价</th>
-                            <th>货架编号</th>
-                            <th><input type="button" id="colse" value="关闭"></th>
-                        </tr>
-                        <tr id="input_ss">
-                            <td><input type="checkbox" name="check"></td>
-                            <td><input type="text" class="input1"/></td>
-                            <td><input type="text" class="input2"/></td>
-                            <td><input type="text" class="input3"/></td>
-                            <td><input type="text" class="input4"/></td>
-                            <td><input type="text" class="input5"/></td>
-                            <td><input type="text" class="input6"/></td>
-                            <td><input type="text" class="input7"/></td>
-                            <td><input type="text" class="input8"/></td>
-                            <td><span id="app">添加</span></td>
-                        </tr>
-                    </table>
-                    <div class="page">
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;">4</a>
-                        <a href="javascript:;">5</a>
-                    </div>
-                    <a href="javascript:;" id="btnAdd">新增商品</a>
-                </div>
-            </div>
-            <!-- 采购管理 -->
-            <div class="purchase_detail">
-                <h3>采购明细表</h3>
-                <div class="seek2">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo2"/>
-                    <a href="javascript:;" id="shou2">搜索</a>
-                </div>
-                <div class="table_th2">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>商品名称</th>
-                                <th>商品条码</th>
-                                <th>商品编号(id)</th>
-                                <th>采购数量</th>
-                                <th>批发价格</th>
-                                <th>库存数量</th>
-                                <th>零售价</th>
-                                <th>货架编号</th>
-                                <th>总价</th>
-                                <th>删除</th>
+                            <tr id="input_ss">
+                                <td><input type="checkbox" name="check"></td>
+                                <td><input type="text" class="input1"/></td>
+                                <td><input type="text" class="input2"/></td>
+                                <td><input type="text" class="input3"/></td>
+                                <td><input type="text" class="input4"/></td>
+                                <td><input type="text" class="input5"/></td>
+                                <td><input type="text" class="input6"/></td>
+                                <td><input type="text" class="input7"/></td>
+                                <td><input type="text" class="input8"/></td>
+                                <td><span id="app">添加</span></td>
                             </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <h2>总计：<i>价钱</i>元
-                      <p>提交采购订单</p>
-                    </h2>
-                </div>
-                <div class="added2">
-                    <div class="page">
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;">4</a>
-                        <a href="javascript:;">5</a>
+                        </table>
+                        <div class="page">
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                        </div>
+                        <a href="javascript:;" id="btnAdd">新增商品</a>
                     </div>
                 </div>
-            </div>
-            <!-- 供应商管理 -->
-            <div class="supplier_detail">
-                <h3>供应商明细表</h3>
-                <div class="seek4">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo4"/>
-                    <a href="javascript:;" id="shou4">搜索</a>
+                <!-- 采购管理 -->
+                <div class="purchase_detail">
+                    <h3>采购明细表</h3>
+                    <div class="seek2">
+                        <input type="text" placeholder="请输入搜索的商品名称" id="shousuo2"/>
+                        <a href="javascript:;" id="shou2">搜索</a>
+                    </div>
+                    <div class="table_th2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>商品编号(id)</th>
+                                    <th>采购数量</th>
+                                    <th>批发价格</th>
+                                    <th>库存数量</th>
+                                    <th>零售价</th>
+                                    <th>货架编号</th>
+                                    <th>总价</th>
+                                    <th>删除</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <h2>总计：<i>价钱</i>元
+                          <p>提交采购订单</p>
+                        </h2>
+                    </div>
+                    <div class="added2">
+                        <div class="page">
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="table_th4">
-                    <table>
-                        <thead>
+                <!-- 供应商管理 -->
+                <div class="supplier_detail">
+                    <h3>供应商明细表</h3>
+                    <div class="seek4">
+                        <input type="text" placeholder="请输入搜索的商品名称" id="shousuo4"/>
+                        <a href="javascript:;" id="shou4">搜索</a>
+                    </div>
+                    <div class="table_th4">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>供应商单位</th>
+                                    <th>供应商地址</th>
+                                    <th>联系人</th>
+                                    <th>联系号码</th>
+                                    <th>邮箱</th>
+                                    <th>删除</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="added4">
+                        <table class="added_id4">
                             <tr>
-                                <th>#</th>
+                                <th>选择</th>
                                 <th>供应商单位</th>
                                 <th>供应商地址</th>
                                 <th>联系人</th>
                                 <th>联系号码</th>
                                 <th>邮箱</th>
-                                <th>删除</th>
-                                <th>编辑</th>
+                                <th><input type="button" id="colse4" value="关闭"></th>
                             </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div class="added4">
-                    <table class="added_id4">
-                        <tr>
-                            <th>#</th>
-                            <th>供应商单位</th>
-                            <th>供应商地址</th>
-                            <th>联系人</th>
-                            <th>联系号码</th>
-                            <th>邮箱</th>
-                            <th><input type="button" id="colse4" value="关闭"></th>
-                        </tr>
-                        <tr id="input_ss4">
-                            <td><input type="checkbox" name="check"></td>
-                            <td><input type="text" class="input1"/></td>
-                            <td><input type="text" class="input2"/></td>
-                            <td><input type="text" class="input3"/></td>
-                            <td><input type="text" class="input4"/></td>
-                            <td><input type="text" class="input5"/></td>
-                            <td><span id="app4">添加</span></td>
-                        </tr>
-                    </table>
-                    <div class="page">
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;">4</a>
-                        <a href="javascript:;">5</a>
-                    </div>
-                    <a href="javascript:;" id="btnAdd4">新增供应商</a>
-                </div>
-            </div>
-            <!-- 收货管理 -->
-            <div class="receipt_detail">
-                <h3>收货明细表</h3>
-                <div class="seek5">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo5"/>
-                    <a href="javascript:;" id="shou5">搜索</a>
-                </div>
-                <div class="table_th5">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>商品名称</th>
-                                <th>商品条码</th>
-                                <th>商品编号(id)</th>
-                                <th>采购数量</th>
-                                <th>批发价格</th>
-                                <th>总价</th>
-                                <th>收货数量</th>
-                                <th>实付金额</th>
-                                <th>采购</th>
-                                <th>删除</th>
+                            <tr id="input_ss4">
+                                <td><input type="checkbox" name="check"></td>
+                                <td><input type="text" class="input1"/></td>
+                                <td><input type="text" class="input2"/></td>
+                                <td><input type="text" class="input3"/></td>
+                                <td><input type="text" class="input4"/></td>
+                                <td><input type="text" class="input5"/></td>
+                                <td><span id="app4">添加</span></td>
                             </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div class="added5">
-                    <table class="added_id5">
-                        <tr>
-                            <th>#</th>
-                            <th>商品名称</th>
-                            <th>商品条码</th>
-                            <th>商品编号(id)</th>
-                            <th>商品图片</th>
-                            <th>厂商地址</th>
-                            <th>库存数量</th>
-                            <th>零售价</th>
-                            <th>货架编号</th>
-                            <th>采购</th>
-                            <th><input type="button" id="colse5" value="关闭"></th>
-                        </tr>
-                        <tr id="input_ss5">
-                            <td><input type="checkbox" name="check"></td>
-                            <td><input type="text" class="input1"/></td>
-                            <td><input type="text" class="input2"/></td>
-                            <td><input type="text" class="input3"/></td>
-                            <td><input type="text" class="input4"/></td>
-                            <td><input type="text" class="input5"/></td>
-                            <td><input type="text" class="input6"/></td>
-                            <td><input type="text" class="input7"/></td>
-                            <td><input type="text" class="input8"/></td>
-                            <td class="Meter"></td>
-                            <td><span id="app5">添加</span></td>
-                        </tr>
-                    </table>
-                    <div class="page">
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;">4</a>
-                        <a href="javascript:;">5</a>
+                        </table>
+                        <div class="page">
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                        </div>
+                        <a href="javascript:;" id="btnAdd4">新增供应商</a>
                     </div>
                 </div>
-            </div>
-            <!-- 退货管理 -->
-            <div class="cancel_detail">
-                <h3>退货明细表</h3>
-                <div class="seek6">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo6"/>
-                    <a href="javascript:;" id="shou6">搜索</a>
-                </div>
-                <div class="table_th6">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>商品名称</th>
-                                <th>商品条码</th>
-                                <th>商品编号(id)</th>
-                                <th>商品图片</th>
-                                <th>厂商地址</th>
-                                <th>零售价</th>
-                                <th>货架编号</th>
-                                <th>删除</th>
-                                <th>编辑</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div class="added6">
-                    <table class="added_id6">
-                        <tr>
-                            <th>#</th>
-                            <th>商品名称</th>
-                            <th>商品条码</th>
-                            <th>商品编号(id)</th>
-                            <th>商品图片</th>
-                            <th>厂商地址</th>
-                            <th>零售价</th>
-                            <th>货架编号</th>
-                            <th><input type="button" id="colse6" value="关闭"></th>
-                        </tr>
-                        <tr id="input_ss6">
-                            <td><input type="checkbox" name="check"></td>
-                            <td><input type="text" class="input1"/></td>
-                            <td><input type="text" class="input2"/></td>
-                            <td><input type="text" class="input3"/></td>
-                            <td><input type="text" class="input4"/></td>
-                            <td><input type="text" class="input5"/></td>
-                            <td><input type="text" class="input6"/></td>
-                            <td><input type="text" class="input7"/></td>
-                            <td><span id="app6">添加</span></td>
-                        </tr>
-                    </table>
-                    <div class="page">
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;">4</a>
-                        <a href="javascript:;">5</a>
+                <!-- 收货管理 -->
+                <div class="receipt_detail">
+                    <h3>收货明细表</h3>
+                    <div class="seek5">
+                        <input type="text" placeholder="请输入搜索的商品名称" id="shousuo5"/>
+                        <a href="javascript:;" id="shou5">搜索</a>
                     </div>
-                    <a href="javascript:;" id="btnAdd6">新增退货</a>
-                </div>
-            </div>
-            <!-- 上架管理 -->
-            <div class="putaway_detail">
-                <h3>上架明细表</h3>
-                <div class="seek7">
-                    <input type="text" placeholder="请输入搜索的商品名称" id="shousuo7"/>
-                    <a href="javascript:;" id="shou7">搜索</a>
-                </div>
-                <div class="table_th7">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>商品名称</th>
-                                <th>商品条码</th>
-                                <th>商品编号(id)</th>
-                                <th>商品图片</th>
-                                <th>厂商地址</th>
-                                <th>零售价</th>
-                                <th>货架编号</th>
-                                <th>删除</th>
-                                <th>编辑</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div class="added7">
-                    <table class="added_id7">
-                        <tr>
-                            <th>#</th>
-                            <th>商品名称</th>
-                            <th>商品条码</th>
-                            <th>商品编号(id)</th>
-                            <th>商品图片</th>
-                            <th>厂商地址</th>
-                            <th>零售价</th>
-                            <th>货架编号</th>
-                            <th><input type="button" id="colse7" value="关闭"></th>
-                        </tr>
-                        <tr id="input_ss7">
-                            <td><input type="checkbox" name="check"></td>
-                            <td><input type="text" class="input1"/></td>
-                            <td><input type="text" class="input2"/></td>
-                            <td><input type="text" class="input3"/></td>
-                            <td><input type="text" class="input4"/></td>
-                            <td><input type="text" class="input5"/></td>
-                            <td><input type="text" class="input6"/></td>
-                            <td><input type="text" class="input7"/></td>
-                            <td><span id="app7">添加</span></td>
-                        </tr>
-                    </table>
-                    <div class="page">
-                        <a href="javascript:;">1</a>
-                        <a href="javascript:;">2</a>
-                        <a href="javascript:;">3</a>
-                        <a href="javascript:;">4</a>
-                        <a href="javascript:;">5</a>
+                    <div class="table_th5">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>商品编号(id)</th>
+                                    <th>采购数量</th>
+                                    <th>批发价格</th>
+                                    <th>总价</th>
+                                    <th>收货数量</th>
+                                    <th>实付金额</th>
+                                    <th>采购</th>
+                                    <th>删除</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
                     </div>
-                    <a href="javascript:;" id="btnAdd7">新增上架</a>
-                </div>
-            </div>
-            <!-- 收银管理 -->
-            <div class="collect_detail">
-                <h3>收银明细表</h3>
-                <input type="text" class="form-control" placeholder="扫码。。。" id="QR">
-                <div class="table_th8">
-                    <table>
-                        <thead>
+                    <div class="added5">
+                        <table class="added_id5">
                             <tr>
-                                <th>#</th>
-                                <th>商品名称</th>
-                                <th>商品条码</th>
-                                <th>商品编号(id)</th>
-                                <th>数量</th>
-                                <th>零售价格</th>
-                                <th>总价</th>
-                                <th>删除</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <a href="javascript:;" id="btnAdd8">结算</a>
-                <div class="erweima">
-                    <img src="../img/erweima.png">
-                    <span>&times;</span>
-                </div>
-                <p class="complete"></p>
-            </div>
-            <!-- 小票打印-->
-            <div class="print_detail">
-                <div class="xiaopiao">
-                    <h3 class="printcui">打印商品</h3>
-                    <table class="moneytable">
-                        <thead class="money_thead">
-                            <tr>
-                                <th>商品名称</th>
-                                <th>产品条码</th>
-                                <th>数量</th>
-                                <th>价格</th>
-                            </tr>
-                        </thead>
-                        <tbody class="mongytbody"></tbody>
-                    </table>
-                    <p class="jisuan"><span>总数量：</span><span class="zongnmber"></span><span>总价：</span><span class="moneynumber"></span></p>
-                    <div class="time"><span>买单时间：</span><span id="time"></span></div>
-                </div>
-            </div>
-            <!-- 权限管理-->
-            <div class="authority_detail"></div>
-            <!-- 用户管理 -->
-            <div class="user_detail">
-                <p><span class="huiyuan">普通会员</span><span class="vip">vip会员</span></p>
-                <div class="allinput">
-                    <label>客户名称：</label><input type="text" class="input1user  inputuser"/>
-                    <label>联系人：</label><input type="text" class="input2user  inputuser"/>
-                    <label>电话：</label><input type="text" class="input3user  inputuser"/>
-                    <label>地址：</label><input type="text" class="input4user  inputuser"/>
-                    <label>客服类别：</label><input type="text" class="input5user  inputuser"/>
-                    <label>身份证：</label><input type="text" class="input6user  inputuser"/>
-                    <label>邮箱：</label><input type="text" class="input7user  inputuser"/>
-                    <input type="button" value="添加用户" class="button_user">
-                </div>
-                <div class="table_th11">
-                    <table class="table_users">
-                         <thead>
-                             <tr>
                                 <th>选择</th>
-                                <th>客户名称</th>
-                                <th>联系人</th>
-                                <th>电话</th>
-                                <th>地址</th>
-                                <th>客服类别</th>
-                                <th>身份证</th>
-                                <th>邮箱</th>
-                                <th>删除</th>
-                                <th>编辑</th>
-                             </tr>
-                         </thead>
-                         <tbody class="tbody_users"></tbody>
-                    </table>
-                </div>                   
-            </div>
-        </div>
-        <!-- 登录 -->
-        <div class="login">
-            <h3><i class="glyphicon glyphicon-queen"></i>超市管理登录</h3>
-            <div class="login_input">
-                <p>帐号：<input type="text" id="username" /></p>
-                <p>密码：<input type="password" id="password" /></p>
-                <input type="button" value="登录" id="btnLogin">
-                <input type="button" value="取消" id="btnExit">
+                                <th>商品名称</th>
+                                <th>商品条码</th>
+                                <th>商品编号(id)</th>
+                                <th>商品图片</th>
+                                <th>厂商地址</th>
+                                <th>库存数量</th>
+                                <th>零售价</th>
+                                <th>货架编号</th>
+                                <th>采购</th>
+                                <th><input type="button" id="colse5" value="关闭"></th>
+                            </tr>
+                            <tr id="input_ss5">
+                                <td><input type="checkbox" name="check"></td>
+                                <td><input type="text" class="input1"/></td>
+                                <td><input type="text" class="input2"/></td>
+                                <td><input type="text" class="input3"/></td>
+                                <td><input type="text" class="input4"/></td>
+                                <td><input type="text" class="input5"/></td>
+                                <td><input type="text" class="input6"/></td>
+                                <td><input type="text" class="input7"/></td>
+                                <td><input type="text" class="input8"/></td>
+                                <td class="Meter"></td>
+                                <td><span id="app5">添加</span></td>
+                            </tr>
+                        </table>
+                        <div class="page">
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 退货管理 -->
+                <div class="cancel_detail">
+                    <h3>退货明细表</h3>
+                    <div class="seek6">
+                        <input type="text" placeholder="请输入搜索的商品名称" id="shousuo6"/>
+                        <a href="javascript:;" id="shou6">搜索</a>
+                    </div>
+                    <div class="table_th6">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>商品编号(id)</th>
+                                    <th>商品图片</th>
+                                    <th>厂商地址</th>
+                                    <th>零售价</th>
+                                    <th>货架编号</th>
+                                    <th>删除</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="added6">
+                        <table class="added_id6">
+                            <tr>
+                                <th>选择</th>
+                                <th>商品名称</th>
+                                <th>商品条码</th>
+                                <th>商品编号(id)</th>
+                                <th>商品图片</th>
+                                <th>厂商地址</th>
+                                <th>零售价</th>
+                                <th>货架编号</th>
+                                <th><input type="button" id="colse6" value="关闭"></th>
+                            </tr>
+                            <tr id="input_ss6">
+                                <td><input type="checkbox" name="check"></td>
+                                <td><input type="text" class="input1"/></td>
+                                <td><input type="text" class="input2"/></td>
+                                <td><input type="text" class="input3"/></td>
+                                <td><input type="text" class="input4"/></td>
+                                <td><input type="text" class="input5"/></td>
+                                <td><input type="text" class="input6"/></td>
+                                <td><input type="text" class="input7"/></td>
+                                <td><span id="app6">添加</span></td>
+                            </tr>
+                        </table>
+                        <div class="page">
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                        </div>
+                        <a href="javascript:;" id="btnAdd6">新增退货</a>
+                    </div>
+                </div>
+                <!-- 上架管理 -->
+                <div class="putaway_detail">
+                    <h3>上架明细表</h3>
+                    <div class="seek7">
+                        <input type="text" placeholder="请输入搜索的商品名称" id="shousuo7"/>
+                        <a href="javascript:;" id="shou7">搜索</a>
+                    </div>
+                    <div class="table_th7">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>商品编号(id)</th>
+                                    <th>商品图片</th>
+                                    <th>厂商地址</th>
+                                    <th>零售价</th>
+                                    <th>货架编号</th>
+                                    <th>删除</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="added7">
+                        <table class="added_id7">
+                            <tr>
+                                <th>选择</th>
+                                <th>商品名称</th>
+                                <th>商品条码</th>
+                                <th>商品编号(id)</th>
+                                <th>商品图片</th>
+                                <th>厂商地址</th>
+                                <th>零售价</th>
+                                <th>货架编号</th>
+                                <th><input type="button" id="colse7" value="关闭"></th>
+                            </tr>
+                            <tr id="input_ss7">
+                                <td><input type="checkbox" name="check"></td>
+                                <td><input type="text" class="input1"/></td>
+                                <td><input type="text" class="input2"/></td>
+                                <td><input type="text" class="input3"/></td>
+                                <td><input type="text" class="input4"/></td>
+                                <td><input type="text" class="input5"/></td>
+                                <td><input type="text" class="input6"/></td>
+                                <td><input type="text" class="input7"/></td>
+                                <td><span id="app7">添加</span></td>
+                            </tr>
+                        </table>
+                        <div class="page">
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                        </div>
+                        <a href="javascript:;" id="btnAdd7">新增上架</a>
+                    </div>
+                </div>
+                <!-- 收银管理 -->
+                <div class="collect_detail">
+                    <h3>收银明细表</h3>
+                    <input type="text" class="form-control" placeholder="扫码。。。" id="QR">
+                    <div class="table_th8">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>商品名称</th>
+                                    <th>商品条码</th>
+                                    <th>商品编号(id)</th>
+                                    <th>数量</th>
+                                    <th>零售价格</th>
+                                    <th>总价</th>
+                                    <th>删除</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <a href="javascript:;" id="btnAdd8">结算</a>
+                    <div class="erweima">
+                        <img src="../img/erweima.png">
+                        <span>&times;</span>
+                    </div>
+                    <p class="complete"></p>
+                </div>
+                <!-- 小票打印-->
+                <div class="print_detail">
+                    <div class="xiaopiao">
+                        <h3 class="printcui">打印商品</h3>
+                        <table class="moneytable">
+                            <thead class="money_thead">
+                                <tr>
+                                    <th>商品名称</th>
+                                    <th>产品条码</th>
+                                    <th>数量</th>
+                                    <th>价格</th>
+                                </tr>
+                            </thead>
+                            <tbody class="mongytbody"></tbody>
+                        </table>
+                        <p class="jisuan"><span>总数量：</span><span class="zongnmber"></span><span>总价：</span><span class="moneynumber"></span></p>
+                        <div class="time"><span>买单时间：</span><span id="time"></span></div>
+                    </div>
+                </div>
+                <!-- 权限管理-->
+                <div class="authority_detail"></div>
+                <!-- 用户管理 -->
+                <div class="user_detail">
+                    <p><span class="huiyuan">普通会员</span><span class="vip">vip会员</span></p>
+                    <div class="allinput">
+                        <label>客户名称：</label><input type="text" class="input1user  inputuser"/>
+                        <label>联系人：</label><input type="text" class="input2user  inputuser"/>
+                        <label>电话：</label><input type="text" class="input3user  inputuser"/>
+                        <label>地址：</label><input type="text" class="input4user  inputuser"/>
+                        <label>客服类别：</label><input type="text" class="input5user  inputuser"/>
+                        <label>身份证：</label><input type="text" class="input6user  inputuser"/>
+                        <label>邮箱：</label><input type="text" class="input7user  inputuser"/>
+                        <input type="button" value="添加用户" class="button_user">
+                    </div>
+                    <div class="table_th11">
+                        <table class="table_users">
+                             <thead>
+                                 <tr>
+                                    <th>选择</th>
+                                    <th>客户名称</th>
+                                    <th>联系人</th>
+                                    <th>电话</th>
+                                    <th>地址</th>
+                                    <th>客服类别</th>
+                                    <th>身份证</th>
+                                    <th>邮箱</th>
+                                    <th>删除</th>
+                                    <th>编辑</th>
+                                 </tr>
+                             </thead>
+                             <tbody class="tbody_users"></tbody>
+                        </table>
+                    </div>                   
+                </div>
             </div>
         </div>
     </div>
@@ -509,7 +501,6 @@
     <script src="../js/putaway.js"></script>
     <script src="../js/collect.js"></script>
     <script src="../js/print.js"></script>
-    <script src="../js/user.js"></script>
-   
+    <script src="../js/user.js"></script>   
 </body>
 </html>
