@@ -20,12 +20,13 @@
 .detail{float:left; padding-left:20px;width:1100px; display:none;}
 table{border:1px solid #ccc;border-collapse: collapse;width:100%;margin-bottom:20px;}
 td,th{border:1px solid #ccc;padding:0; text-align:center}
-th{padding:0 15px;text-align:center;background-color:#666; color:#fff;}
+th{padding:0 15px;text-align:center;background-color:#666; color:#fff;height:30px;}
 tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; outline:none; text-align:center}
 .detail a{color:skyblue;display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
 .page{ float:right;}
 .page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
 .page>a:hover{border:1px solid #f15c18; color:#f15C18; text-decoration:none;}
+#colse,#colse3,#colse4,#colse6,#colse7{cursor:pointer;width:45px;}
 
 /*、、、1.产品、、、*/
 .product_detail{padding-top:10px;}
@@ -61,7 +62,7 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .seek3{margin-bottom:30px;}
 .added3>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 #app3{cursor:pointer;}
-.added_id3{display:none;width:805px;}
+.added_id3{display:none;width:864px;}
 
 /*、、、4.供应商、、、*/
 .supplier_detail{padding-top:10px; display:none;}
@@ -69,10 +70,10 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .supplier_detail .supplierDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .supplier_detail .supplierEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek4{margin-bottom:30px;}
-.table_th4 table tr td input.input5{width:162px;}
+.table_th4 table tr td input.input5,.added_id4 input.input5{width:162px;}
 .added4>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 #app4{cursor:pointer;}
-.added_id4{display:none;width:778px;}
+.added_id4{display:none;width:717px;}
 
 /*、、、5.收货、、、*/
 .receipt_detail{padding-top:10px; display:none;}
@@ -90,7 +91,7 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .cancel_detail .cancelEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .added6>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 #app6{cursor:pointer;}
-.added_id6{display:none;width:805px;}
+.added_id6{display:none;width:864px;}
 
 /*、、、7.上架、、、*/
 .putaway_detail{padding-top:10px; display:none;}
@@ -99,19 +100,20 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .putaway_detail .putawayEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .added7>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 #app7{cursor:pointer;}
-.added_id7{display:none;width:805px;}
+.added_id7{display:none;width:864px;}
 
 /*、、、8.收银、、、*/
-.collect_detail{padding-top:10px; display:none;}
+.collect_detail{padding-top:10px; display:none;position:relative;}
 .collect_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 .collect_detail .btnDel_col{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .collect_detail .btnEdit_col{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 #btnAdd8{font-size: 30px;color:#fff;background:skyblue;width:200px;}
+.complete{position:absolute;font-size: 20px;color: red;left:250px;top:205px;}
 
 /* ------------二维码------------ */
 .erweima{display:none;position:relative;}
-.erweima img{margin:0px auto;}
-.erweima span{font-size:30px; position:absolute; top:-20px; right:400px; width:30px; height:30px; border-radius:50%; line-height:30px; text-align:center;}
+.erweima img{margin:0px auto;border: 1px solid #ccc;border-radius: 20px;}
+.erweima span{font-size:30px; position:absolute; top:-30px; right:398px; width:30px; height:30px; border-radius:50%; line-height:26px; text-align:center;background:#ccc;}
 .erweima span:hover{ background-color:#c15f18; color:#fff; cursor:pointer;}
 
 /*、、、9.小票、、、*/

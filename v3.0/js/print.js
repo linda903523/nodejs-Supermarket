@@ -1,3 +1,4 @@
+/*------------小票打印-----------*/
 jQuery(function($){
     $('.print').click(function(){
         print();
@@ -39,26 +40,24 @@ jQuery(function($){
             var th = $.map(listsql,function(item){
                 return `${item.name}                 ${item.qty +'件'}          ${item.shoujia*item.qty + '元'}\n`
             }).join('');
-
             var a = $('.zongnmber').text();
             var b = $('.moneynumber').text();
-            $.post("http://10.3.131.33:81/print", {text:`皇冠超市\n*************************************\n商品名称   单品数量     商品金额 \n\n${th}\n*************************************\n时间:${printtime}\n\n总数量：${a}     总价：${b}\n\n付款：应付人名币${b}\n*********************************************\n        \n`},function(res){
-                //console.log(res);
+            console.log(a,b)
+            $.post("http://10.3.131.33:81/print", {text:`皇冠超市\n*************************************\n商品名称   单品数量     商品金额 \n\n${th}\n*************************************\n时间:${printtime}\n\n总数量：${a}     总价：${b}\n\n付款：应付人民币${b}\n*********************************************\n        \n`},function(res){
+                console.log(res);
             })
-            // 获取所有商品总计            
         })
     })
-    
     function print(){
-        $.post("http://localhost:12/col_search",{},function(response){
+        $.post(common.baseUrl + '/col_search',{},function(response){
             response = JSON.parse(response);
             listsql = response.data;
             var th=$.map(listsql,function(item){
-            return `<tr>
-                <td><input type="text" class="input1_print" value="${item.name}"/></td>
-                <td><input type="text" class="input2_print" value="${item.tiaoma}"/></td>
-                <td><input type="text" class="input3_print" value="${item.qty}"/></td>
-                <td><input type="text" class="input4_print" value="${item.shoujia*item.qty }"/></td>
+                return `<tr>
+                    <td><input type="text" class="input1_print" value="${item.name}"/></td>
+                    <td><input type="text" class="input2_print" value="${item.tiaoma}"/></td>
+                    <td><input type="text" class="input3_print" value="${item.qty}"/></td>
+                    <td><input type="text" class="input4_print" value="${item.shoujia*item.qty }"/></td>
                 </tr>`
             }).join('');
             $('.mongytbody')[0].innerHTML = '';
@@ -76,6 +75,14 @@ jQuery(function($){
                 money+=Number($(this).val());
             })
             $('.moneynumber').html(money+'元');
-        });            
+        });                  
     }
+    
+    var ws;
+    ws = new WebSocket("ws://10.3.131.14:888");
+    ws.onmessage = function(_msg){
+        console.log(_msg.data);
+        $('.complete').html(_msg.data);
+        $('.erweima').hide();
+    } 
 })

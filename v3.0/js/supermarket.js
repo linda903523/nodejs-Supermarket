@@ -60,6 +60,7 @@ jQuery(function($){
             number:$('#input_ss .input6').val(),
             shoujia:$('#input_ss .input7').val(),
             bianhao:$('#input_ss .input8').val(),
+            qty:1,
         },function(response){
             response = JSON.parse(response);
             if(response.status){

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>皇冠超市管理</title>
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/base.css"/>
     <link rel="stylesheet" href="../css/supermarket.css"/>
     <script src="../lib/jquery-3.2.1.min.js"></script>
+    <script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="../js/common.js"></script>
 </head>
 <body>
@@ -101,7 +103,6 @@
                             <th>库存数量</th>
                             <th>零售价</th>
                             <th>货架编号</th>
-                            <th>采购</th>
                             <th><input type="button" id="colse" value="关闭"></th>
                         </tr>
                         <tr id="input_ss">
@@ -114,7 +115,6 @@
                             <td><input type="text" class="input6"/></td>
                             <td><input type="text" class="input7"/></td>
                             <td><input type="text" class="input8"/></td>
-                            <td class="Meter"><meter min="1" max="100"  low="30"hight="80" optimun="90"></meter><button>采购</button></td>
                             <td><span id="app">添加</span></td>
                         </tr>
                     </table>
@@ -494,9 +494,10 @@
                 </div>
                 <a href="javascript:;" id="btnAdd8">结算</a>
                 <div class="erweima">
-                    <!-- <img src="../img/w.bmp"> -->
+                    <img src="../img/erweima.png">
                     <span>&times;</span>
                 </div>
+                <p class="complete"></p>
             </div>
             <!-- 小票打印-->
             <div class="print_detail">
@@ -574,5 +575,6 @@
     <script src="../js/collect.js"></script>
     <script src="../js/print.js"></script>
     <script src="../js/user.js"></script>
+   
 </body>
 </html>
