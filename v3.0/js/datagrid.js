@@ -72,7 +72,7 @@ $.fn.datagrid = function(opts){
 
 	init();
 
-	/*var events = function(event){
+	var events = function(event){
 		console.log(event.target);
 		var currObj = $(event.target);
 		if(currObj.is('span') && currObj.attr('flag') == 'delete'){
@@ -85,5 +85,5 @@ $.fn.datagrid = function(opts){
 				}
 			})
 		}
-	}*/
+	}
 }

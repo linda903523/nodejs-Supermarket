@@ -17,10 +17,9 @@ jQuery(function($){
                         number:seda[0].number,
                         shoujia:seda[0].shoujia,
                         bianhao:seda[0].bianhao,
-                        purchase:20,
-                        whole:2,
-                        offic:0,
-                        offic_many:0,
+                        purchaseNumber:20,
+                        price:2,
+                        receiptNumber:20
                     },function(response){
                         response=JSON.parse(response);
                         if(response.status){
@@ -90,12 +89,12 @@ jQuery(function($){
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
                     <td><input type="text" class="input3" value="${item.id}"/></td>
-                    <td><input type="text" class="input4" value="${item.purchase}"/></td>
-                    <td><input type="text" class="input5" value="${item.whole}"/></td>
+                    <td><input type="text" class="input4" value="${item.purchaseNumber}"/></td>
+                    <td><input type="text" class="input5" value="${item.price}"/></td>
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item.bianhao}"/></td>
-                    <td class="tota">${item.purchase*item.whole}</td>
+                    <td class="tota">${item.purchaseNumber*item.price}</td>
                     <td><input type="button" value="删除" class="btnDel_pur"/></td>
                 </tr>`
             }).join('');

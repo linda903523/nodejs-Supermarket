@@ -72,28 +72,30 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .receipt_detail{padding-top:10px; display:none;}
 .receipt_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 .receipt_detail .btnDel_rec{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.receipt_detail .btnCan{background: green;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek5{margin-bottom:30px;}
-.added5>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-#app5{cursor:pointer;}
-.added_id5{display:none;}
 
 /*、、、6.退货、、、*/
 .cancel_detail{padding-top:10px; display:none;}
 .cancel_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 .cancel_detail .cancelDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .cancel_detail .cancelEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.seek6{margin-bottom: 30px;}
 .added6>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 #app6{cursor:pointer;}
-.added_id6{display:none;width:864px;}
+.added_id6{display:none;width:828px;}
+.cancel_detail h2{text-align:center;width:200px; margin:20px auto; background-color:#ccc;}
+.cancel_detail h2:hover{background-color:#c15f18; color:#fff; cursor:pointer;}
 
 /*、、、7.上架、、、*/
 .putaway_detail{padding-top:10px; display:none;}
 .putaway_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 .putaway_detail .putawayDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .putaway_detail .putawayEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.seek7{margin-bottom: 30px;}
 .added7>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
 #app7{cursor:pointer;}
-.added_id7{display:none;width:864px;}
+.added_id7{display:none;width:828px;}
 
 /*、、、8.收银、、、*/
 .collect_detail{padding-top:10px; display:none;position:relative;}
@@ -127,7 +129,7 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .user_detail p span{display:block;padding:0 10px;float:left;border:1px solid #ddd;margin-right:20px;cursor:pointer;font-size:14px;}
 .user_detail .active{background-color:#89C9E2;color:#ffffff;}
 .user_detail .table_users{margin-top:20px;}
-.user_detail tbody input.input6,.user_detail tbody input.input7{width:162px;}        
+.user_detail tbody input.input6{width:162px;}        
 .user_detail .input10,.user_detail .input11{background-color:#F6AB00;width:50px;margin-left:6px;color:#ffffff;border-radius:20px;}
 .user_detail .input11{background-color:#65A031;}
 .allinput{margin-top:10px;position:relative;}

@@ -1,5 +1,34 @@
 /*------------退货管理-----------*/
 jQuery(function($){
+    //添加到退货
+    $(document).on('click','.btnCan',function(){
+        var $tiaoma = $(this).parent().prevAll().find('.input2').val();
+        $.post(common.baseUrl + '/rec_search',{tiaoma:$tiaoma},function(response){
+            response = JSON.parse(response);
+            var seda = response.data;
+            if(response.status){
+                $.post(common.baseUrl + '/can_create',{
+                    name:seda[0].name,
+                    tiaoma:seda[0].tiaoma,
+                    id:seda[0].id,
+                    img:seda[0].img,
+                    dizhi:seda[0].dizhi,
+                    number:seda[0].receiptNumber,
+                    time:''
+                },function(response){
+                    response=JSON.parse(response);
+                    if(response.status){
+                        alert('退货成功');
+                    } else {
+                        alert('退货失败');
+                    }
+                })
+            } else {
+                alert(response.message);
+            }
+        })     
+    })
+
     $('.cancel').on('click',function(){
         cancel();
     })
@@ -17,7 +46,7 @@ jQuery(function($){
                     <td><input type="text" class="input4" value="${item.img}"/></td>
                     <td><input type="text" class="input5" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input6" value="${item.number}"/></td>
-                    <td><input type="text" class="input7" value="${item.shoujia}"/></td>
+                    <td><input type="text" class="input7" /></td>
                     <td><input type="button" value="删除" class="cancelDel"/></td>
                     <td><input type="button" value="编辑" class="cancelEdit"/></td>
                 </tr>`
@@ -48,8 +77,7 @@ jQuery(function($){
             img:$('#input_ss6 .input4').val(),
             dizhi:$('#input_ss6 .input5').val(),
             number:$('#input_ss6 .input6').val(),
-            shoujia:$('#input_ss6 .input7').val(),
-            bianhao:$('#input_ss6 .input8').val(),
+            time:$('#input_ss6 .input7').val()
         },function(response){
             response = JSON.parse(response);
             if(response.status){
@@ -78,7 +106,7 @@ jQuery(function($){
                     <td><input type="text" class="input4" value="${item.img}"/></td>
                     <td><input type="text" class="input5" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input6" value="${item.number}"/></td>
-                    <td><input type="text" class="input7" value="${item.shoujia}"/></td>
+                    <td><input type="text" class="input7" /></td>
                     <td><input type="button" value="删除" class="cancelDel"/></td>
                     <td><input type="button" value="编辑" class="cancelEdit"/></td>
                 </tr>`
@@ -136,7 +164,7 @@ jQuery(function($){
                 var va4 = a[4].firstChild.value;
                 var va5 = a[5].firstChild.value;
                 var va6 = a[6].firstChild.value;
-                var va7 = a[7].firstChild.value;
+                var va7 = a[7].firstChild.value;;
                 $.post(common.baseUrl + '/can_update',{
                     goods:JSON.stringify({
                         name:va1,
@@ -144,16 +172,16 @@ jQuery(function($){
                         id:va3,
                         img:va4,
                         dizhi:va5,
-                        shoujia:va6,
-                        bianhao:va7
+                        number:va6,
+                        time:va7
                     }),lists:JSON.stringify({
                         name:va11,
                         tiaoma:va12,
                         id:va13,
                         img:va14,
                         dizhi:va15,
-                        shoujia:va16,
-                        bianhao:va17
+                        number:va16,
+                        time:va17
                     })},function(response){
                         response=JSON.parse(response);
                         if(response.status){

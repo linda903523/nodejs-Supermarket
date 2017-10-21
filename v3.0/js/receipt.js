@@ -14,12 +14,12 @@ jQuery(function($){
                     <td><input type="text" class="input1" value="${item.name}"/></td>
                     <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
                     <td><input type="text" class="input3" value="${item.id}"/></td>
-                    <td><input type="text" class="input4" value="${item.purchase}"/></td>
-                    <td><input type="text" class="input5" value="${item.whole}"/></td>
-                    <td><input type="text" class="input6" value="${item.purchase*item.whole}"/></td>
-                    <td><input type="text" class="input7" value="${item.offic}"/></td>
-                    <td><input type="text" class="input8" value="${item.offic_many}"/></td>
-                    <td class="tota5">${item.purchase*item.whole}</td>
+                    <td><input type="text" class="input4" value="${item.purchaseNumber}"/></td>
+                    <td><input type="text" class="input5" value="${item.price}"/></td>
+                    <td><input type="text" class="input6" value="${item.receiptNumber}"/></td>
+                    <td><input type="text" class="input7" /></td>
+                    <td><input type="text" class="input8" value="${item.receiptNumber*item.price}"/></td>
+                    <td><input type="button" value="退货" class="btnCan"/></td>
                     <td><input type="button" value="删除" class="btnDel_rec"/></td>
                 </tr>`
             }).join('');
