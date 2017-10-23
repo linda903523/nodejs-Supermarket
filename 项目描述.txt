@@ -1,5 +1,30 @@
 一、组员
-  1.付玲（组长）
-    github:git@github.com:linda903523/nodejs.git
-  2.徐翠
-  3.袁守明
+   1.付玲（组长）
+      github:git@github.com:linda903523/nodejs.git
+   2.徐翠
+   3.袁守明
+
+二、项目环境
+   1.mongodb数据库；导出数据 文件夹—cuicui
+   2.安装插件：
+        "body-parser": "^1.18.2",
+    	"cookie-parser": "^1.4.3",
+    	"express": "^4.16.2",
+    	"express-session": "^1.15.6",
+    	"mongodb": "^2.2.33",
+    	"multer": "^1.3.0",
+    	"socket.io": "^2.0.3",
+    	"ws": "^3.2.0"
+   3.nodejs环境
+   4.需要修改文件
+	(1)DBHelper.js：（第六行）mongodb：//路径//数据库名 称
+	(2)print.js：（85行）ws://本机路径//端口（888）
+		socket.js 端口（888）
+		pay.html ws://本机路径//端口（888）
+	(3)common.js：端口（12），检查是否有冲突
+		router.js端口（12）
+	(4)pay.html:（31行）打印装置本地路径：端口
+三、项目分配
+   1.付玲：其他模块、整合项目、数据库管理、github管理
+   2.徐翠：上架管理、小票打印、用户管理
+   3.袁守明：产品管理、采购管理、收货管理、收银管理
