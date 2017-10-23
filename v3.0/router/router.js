@@ -5,6 +5,7 @@ var receipt = require('./receipts.js');
 var collect = require('./collects.js');
 var cancel = require('./cancels.js');
 var supplier = require('./suppliers.js');
+var putaway = require('./putaway.js');
 var path = require('path');
 
 module.exports = {
@@ -29,7 +30,8 @@ module.exports = {
         receipt.Receipt(app);
         collect.Collect(app);
         cancel.Cancel(app);
-        supplier.Supplier(app)
+        supplier.Supplier(app);
+        putaway.Putaway(app);
 
         app.listen(12);
     }

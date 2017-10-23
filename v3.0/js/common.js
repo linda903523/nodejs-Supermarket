@@ -1,2 +1,2 @@
 var common = common || {};
-common.baseUrl = 'http://localhost:12';
+common.baseUrl = 'http://10.3.131.9:12';

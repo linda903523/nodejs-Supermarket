@@ -12,13 +12,11 @@ jQuery(function($){
                         name:seda[0].name,
                         tiaoma:seda[0].tiaoma,
                         id:seda[0].id,
-                        img:seda[0].img,
-                        dizhi:seda[0].dizhi,
-                        number:seda[0].number,
-                        shoujia:seda[0].shoujia,
-                        bianhao:seda[0].bianhao,
                         purchaseNumber:20,
                         price:2,
+                        dizhi:seda[0].dizhi,
+                        shoujia:seda[0].shoujia,
+                        bianhao:seda[0].bianhao,
                         receiptNumber:20
                     },function(response){
                         response=JSON.parse(response);
@@ -91,7 +89,7 @@ jQuery(function($){
                     <td><input type="text" class="input3" value="${item.id}"/></td>
                     <td><input type="text" class="input4" value="${item.purchaseNumber}"/></td>
                     <td><input type="text" class="input5" value="${item.price}"/></td>
-                    <td><input type="text" class="input6" value="${item.number}"/></td>
+                    <td><input type="text" class="input6" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
                     <td><input type="text" class="input8" value="${item.bianhao}"/></td>
                     <td class="tota">${item.purchaseNumber*item.price}</td>
@@ -111,4 +109,37 @@ jQuery(function($){
             }
         })
     }
+
+    //搜索
+    $('#shou2').click(function(){
+        $('.added2>a').hide();
+        $.post(common.baseUrl + '/pur_search',{name:$('#shousuo2').val()},function(response){
+            response = JSON.parse(response);
+            var listsql = response.data;
+            var th = $.map(listsql,function(item){
+                return `<tr class="table_tr">
+                    <td><input type="checkbox" name="check"></td>
+                    <td><input type="text" class="input1" value="${item.name}"/></td>
+                    <td><input type="text" class="input2" value="${item.tiaoma}"/></td>
+                    <td><input type="text" class="input3" value="${item.id}"/></td>
+                    <td><input type="text" class="input4" value="${item.purchaseNumber}"/></td>
+                    <td><input type="text" class="input5" value="${item.price}"/></td>
+                    <td><input type="text" class="input6" value="${item.dizhi}"/></td>
+                    <td><input type="text" class="input7" value="${item.shoujia}"/></td>
+                    <td><input type="text" class="input8" value="${item.bianhao}"/></td>
+                    <td class="tota">${item.purchaseNumber*item.price}</td>
+                    <td><input type="button" value="删除" class="btnDel_pur"/></td>
+                </tr>`
+            }).join('');
+            $('.table_th2 tbody').html('');
+            $('.table_th2 tbody').html(th);
+
+            if(response.status){
+                alert('搜索成功');
+                $('.table_th2 h2').hide();
+            } else {
+                alert(response.message);
+            }
+        })       
+    })
 })

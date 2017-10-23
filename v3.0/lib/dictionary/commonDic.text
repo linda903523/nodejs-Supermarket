@@ -1,0 +1,24 @@
+{
+	"cn": {
+		"name": "商品名称",
+		"tiaoma": "商品条码",
+		"_id": "商品编号(id)",
+		"img": "产品图片",
+		"dizhi":"厂商地址",
+		"number":"库存数量",
+		"purchaseNumber":"采购数量",
+		"shoujia": "商品价格",
+		"bianhao": "货架编号"
+	},
+	"en": {
+		"name": "Product Name",	
+		"tiaoma": "Product Code",
+		"_id": "ID",
+		"img": "Product Img",
+		"dizhi":"Manufacturer's address",
+		"number":"StockQty",
+		"purchaseNumber":"PurchaseQty",
+		"shoujia": "Product Price",
+		"bianhao": "Product Number"
+	}
+}

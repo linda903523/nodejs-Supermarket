@@ -5,7 +5,7 @@ jQuery(function($){
     })
     
     function putaway(){
-        $.post(common.baseUrl + '/can_search',{},function(response){
+        $.post(common.baseUrl + '/put_search',{},function(response){
             response = JSON.parse(response);
             var listsql = response.data;
             var th = $.map(listsql,function(item){
@@ -18,6 +18,7 @@ jQuery(function($){
                     <td><input type="text" class="input5" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
+                    <td class="tota">${item.number*item.shoujia}</td>
                     <td><input type="button" value="删除" class="putawayDel"/></td>
                     <td><input type="button" value="编辑" class="putawayEdit"/></td>
                 </tr>`
@@ -31,42 +32,42 @@ jQuery(function($){
         })
     }
 
-    // 新增按钮xxxxxxxxxxxxxxxxxxxxxxxxxxx
-    $('#btnAdd7').on('click', function(){
-        $('.added_id7').css({display : "block"})
-    })
-    $('#colse7').on('click', function(){
-        $('.added_id7').css({display:"none"})
-    })
-    
-    // 增加
-    $('#app7').on('click', function(){
-        $.post(common.baseUrl + '/can_create',{
-            name:$('#input_ss7 .input1').val(),
-            tiaoma:$('#input_ss7 .input2').val(),
-            id:$('#input_ss7 .input3').val(),
-            img:$('#input_ss7 .input4').val(),
-            dizhi:$('#input_ss7 .input5').val(),
-            number:$('#input_ss7 .input6').val(),
-            shoujia:$('#input_ss7 .input7').val(),
-            bianhao:$('#input_ss7 .input8').val(),
-        },function(response){
-            response = JSON.parse(response);
-            if(response.status){
-                alert('添加成功');
-                $('.added_id7').css({display:"none"})
-                $('.added_id7 td input').val('');
-                putaway();
-            } else {
-                alert(response.message);
-            }
-        })
+
+    //添加到上架
+    $(document).click(function(e){
+        if($(e.target).attr('class') == 'productPutaway'){
+            $.post(common.baseUrl + '/search',{},function(response){
+                response = JSON.parse(response);
+                var seda = response.data;
+                if(response.status){
+                    $.post(common.baseUrl + '/put_create',{
+                        name:seda[0].name,
+                        tiaoma:seda[0].tiaoma,
+                        id:seda[0].id,
+                        img:seda[0].img,
+                        dizhi:seda[0].dizhi,
+                        number:1,
+                        shoujia:seda[0].shoujia,
+                        bianhao:seda[0].bianhao
+                    },function(response){
+                        response=JSON.parse(response);
+                        if(response.status){
+                            alert('上架成功');
+                        } else {
+                            alert('上架失败');
+                        }
+                    })
+                }else {
+                    alert(response.message);
+                }
+            })
+        }
     })
 
     //搜索
     $('#shou7').click(function(){
         $('.added7>a').hide();
-        $.post(common.baseUrl + '/can_search',{name:$('#shousuo7').val()},function(response){
+        $.post(common.baseUrl + '/put_search',{name:$('#shousuo7').val()},function(response){
             response = JSON.parse(response);
             var listsql = response.data;
             var th = $.map(listsql,function(item){
@@ -79,6 +80,7 @@ jQuery(function($){
                     <td><input type="text" class="input5" value="${item.dizhi}"/></td>
                     <td><input type="text" class="input6" value="${item.number}"/></td>
                     <td><input type="text" class="input7" value="${item.shoujia}"/></td>
+                    <td class="tota">${item.number*item.shoujia}</td>
                     <td><input type="button" value="删除" class="putawayDel"/></td>
                     <td><input type="button" value="编辑" class="putawayEdit"/></td>
                 </tr>`
@@ -98,7 +100,7 @@ jQuery(function($){
     $(document).on('click',function(e){
         if($(e.target).attr('class') == 'putawayDel'){
             var $bianhao_id = $(e.target).parent().prevAll().find('.input3').val();
-            $.post(common.baseUrl+'/can_delete',{id:$bianhao_id},function(response){
+            $.post(common.baseUrl+'/put_delete',{id:$bianhao_id},function(response){
                 response=JSON.parse(response);        
                 if(response.status){
                     alert('删除成功');
@@ -137,7 +139,7 @@ jQuery(function($){
                 var va5 = a[5].firstChild.value;
                 var va6 = a[6].firstChild.value;
                 var va7 = a[7].firstChild.value;
-                $.post(common.baseUrl + '/can_update',{
+                $.post(common.baseUrl + '/put_update',{
                     goods:JSON.stringify({
                         name:va1,
                         tiaoma:va2,

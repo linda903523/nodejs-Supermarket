@@ -24,6 +24,7 @@ table{border:1px solid #ccc;border-collapse: collapse;width:100%;margin-bottom:2
 td,th{border:1px solid #ccc;padding:0; text-align:center}
 th{padding:0 15px;text-align:center;background-color:#666; color:#fff;height:30px;}
 tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; outline:none; text-align:center}
+.input2{width:130px;}
 .detail a{color:skyblue;display:inline-block; width:60px; border:1px solid #ccc; font-size:14px; margin-left:20px; text-align:center; border-radius:5px 5px;}
 .page{ float:right;}
 .page>a{display:inline-block; border:1px solid #ddd; width:30px; text-align:center; margin:0 10px; border-radius:5px 5px;}
@@ -35,15 +36,15 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .product_detail h3{ background-color:#DCE6F9; border-radius:5px 5px; width:500px; margin-bottom:20px;}
 .product_detail .productDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .product_detail .productEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
+.product_detail .productPutaway{background: pink;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek{margin-bottom:30px;}
 .Meter meter{width:44px;}
-.Meter button{display:none;margin-left: 7px;}
+.Meter button{display:none;margin-left: 4px;}
 .Meter:hover button{display:block;}
 .Meter:hover meter{display:none;}
 .added>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;display:inline-block;margin-right:30px;}
 #app{cursor:pointer;}
 .added_id{display:none;width:959px;}
-#input_ss input.input2,.table_th table tr td input.input2{width:130px;}
 
 /*、、、2.采购、、、*/
 .purchase_detail{padding-top:10px; display:none;}
@@ -93,9 +94,8 @@ tbody input{width:90px;border:none;border-style:none; height:18px; padding:0; ou
 .putaway_detail .putawayDel{background: #FFC358;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .putaway_detail .putawayEdit{background: #89C9E2;width:40px;border-radius:40px;color:#fff;cursor:pointer;}
 .seek7{margin-bottom: 30px;}
-.added7>a{border:1px solid #ddd; border-radius:5px 5px; width:80px; text-align:center; text-decoration:none;}
-#app7{cursor:pointer;}
-.added_id7{display:none;width:828px;}
+.putaway_detail label{width:70px;text-align:center;}
+.putaway_detail #putaway_but{text-align:center;border:1px solid #ccc;width:60px;line-height:30px;border-radius:10px;float:right;margin-right:60px;background-color:pink;}
 
 /*、、、8.收银、、、*/
 .collect_detail{padding-top:10px; display:none;position:relative;}

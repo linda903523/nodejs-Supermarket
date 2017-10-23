@@ -1,5 +1,6 @@
 var db = require('../DBHelper.js');
 var bodyparser = require('body-parser');
+var mongodb = require('mongodb');
 var urlencode = bodyparser.urlencoded({extended: false});
 
 module.exports = {
@@ -16,7 +17,6 @@ module.exports = {
         })
         app.post("/delete",urlencode,function(request, response){
             db.delete('products',request.body,function(result){
-                console.log(result);
                 response.send(result);
             })
         })

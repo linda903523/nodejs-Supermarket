@@ -80,7 +80,7 @@ jQuery(function($){
     }
     
     var ws;
-    ws = new WebSocket("ws://10.3.131.8:888");
+    ws = new WebSocket("ws://10.3.131.9:888");
     ws.onmessage = function(_msg){
         $('.complete').show().html(_msg.data);
         $('.erweima').hide();

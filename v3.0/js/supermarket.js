@@ -67,6 +67,7 @@ jQuery(function($){
                     <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.id}">采购</button></td>
                     <td><input type="button" value="删除" class="productDel"/></td>
                     <td><input type="button" value="编辑" class="productEdit"/></td>
+                    <td><input type="button" value="上架" class="productPutaway"/></td>
                 </tr>`
             }).join('');
             $('.table_th tbody').html('');
@@ -192,6 +193,7 @@ jQuery(function($){
                     <td class="Meter"><meter min="1" max="100" value="${item.number}" low="30"hight="80" optimun="90"></meter><button class="${item.id}">采购</button></td>
                     <td><input type="button" value="删除" class="productDel"/></td>
                     <td><input type="button" value="编辑" class="productEdit"/></td>
+                    <td><input type="button" value="上架" class="productPutaway"/></td>
                 </tr>`
             }).join('');
             $('.table_th tbody').html('');
